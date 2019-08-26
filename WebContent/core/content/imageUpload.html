@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+      <title>插入图片</title>
+      <script type="text/javascript" src="../../core/javascript/commonUtil.js"></script>
+      <link href="tab/images/test.css" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="tab/js/tab_change.js"></script>
+   </head>
+   <body>
+      <div class="auntion_tagRoom">
+         <ul>
+            <li id="two1" onclick="setTab2('two',1,2)" class="selectTag">
+               <a href="javascript:;">图片上传</a>
+            </li>
+            <li id="two2" onclick="setTab2('two',2,2)">
+               <a href="javascript:;">图片库 </a>
+            </li>
+
+         </ul>
+      </div>
+
+      <div id="g3_two_1" class="auntion_Room_C_imglist" style="display:;">
+
+         <iframe id="uploadFrame" name="uploadFrame" frameborder=0 src="EditorUploadImage.jsp" width="100%" height="300" scrolling=no></iframe>
+         <input name="imgFile" type="hidden" id='imgFile' value='' />
+
+      </div>
+      <div id="g3_two_2" class="auntion_Room_C_imglist" style="display:none;">
+         
+         <br>
+         <iframe id="uploadFrame" name="uploadFrame" frameborder=0 src="../resources/EditorListImageResources.jsp?classId=-1" width="100%" height="510" scrolling=no></iframe>
+         <input name="imgFile" type="hidden" id='imgFile' value='' />
+
+      </div>
+
+
+
+
+   </body>
+
+</html>
+<script type="text/javascript">
+
+function changeCurrentImg()
+{
+	document.all.imgFile.value=getResultFromFrame("uploadFrame","classImgFile");
+	
+	if(document.all.imgFile.value!='')
+	{
+    	window.returnValue=document.all.imgFile.value;
+    }
+}
+
+	
+function getResultFromFrame(frameName,targetName)
+{
+    return document.getElementById(frameName).contentWindow.document.getElementById(targetName).value;
+}
+	
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery JSONView</title>
+  <link rel="stylesheet" href="jquery.jsonview.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.jsonview.js"></script>
+  <script type="text/javascript">
+    var json = {"content":[{"contentId":703,"classId":10658,"refCid":-1,"linkCid":-1,"title":"按时的按时的的大撒的","simpleTitle":"","shortTitle":"","author":"","creator":"admin","summary":"撒大苏打撒大撒撒旦的按时 撒旦按时打算啊撒旦似的士大夫似的反对发似的","titleStyle":"color:;font-weight:;font-style:;text-decoration:","simpleTitleStyle":"color:;font-weight:;font-style:;text-decoration:","addTime":1463107488000,"clickMonthCount":0,"clickWeekCount":0,"clickDayCount":0,"clickCount":50,"commMonthCount":0,"commWeekCount":0,"commDayCount":0,"commCount":0,"supportCount":0,"againstCount":0,"homeImage":"","classImage":"","channelImage":"","contentImage":"","systemHandleTime":"2016-05-13 10:44:48.265","especialTemplateUrl":"","staticPageUrl":"content/2016/703.html","outLink":"","produceType":3,"censorState":1,"isPageContent":0,"isSystemOrder":1,"orderIdFlag":703,"keywords":"按时 ","tagKey":"","pubDateSysDT":21825,"appearStartDateTime":1463107488000,"appearEndDateTime":"","homeImgFlag":0,"classImgFlag":0,"commendFlag":0,"channelImgFlag":0,"contentImgFlag":0,"relateIds":"","relateSurvey":"","typeFlag":"-1","topFlag":1,"otherFlag":0,"modelId":82,"siteId":5,"allowCommend":1,"moodT1Count":0,"moodT2Count":0,"moodT3Count":0,"moodT4Count":0,"moodT5Count":0,"moodT6Count":0,"moodT7Count":0,"moodT8Count":0,"moodT9Count":0,"moodT10Count":0,"className":"国内新闻","pubDate":1463107488000,"isPage":false,"contentUrl":"http://192.168.1.100/content/2016/703.html"},{"contentId":702,"classId":10658,"refCid":-1,"linkCid":-1,"title":"asdasdddad","simpleTitle":"","shortTitle":"","author":"","creator":"admin","summary":"sadas","titleStyle":"color:;font-weight:;font-style:;text-decoration:","simpleTitleStyle":"color:;font-weight:;font-style:;text-decoration:","addTime":1463107438000,"clickMonthCount":0,"clickWeekCount":0,"clickDayCount":0,"clickCount":73,"commMonthCount":0,"commWeekCount":0,"commDayCount":0,"commCount":0,"supportCount":0,"againstCount":0,"homeImage":"","classImage":"","channelImage":"","contentImage":"","systemHandleTime":"2016-05-13 10:43:58.906","especialTemplateUrl":"","staticPageUrl":"content/2016/702.html","outLink":"","produceType":3,"censorState":1,"isPageContent":0,"isSystemOrder":1,"orderIdFlag":702,"keywords":"asdasdddad ","tagKey":"","pubDateSysDT":21824,"appearStartDateTime":1463107438000,"appearEndDateTime":"","homeImgFlag":0,"classImgFlag":0,"commendFlag":0,"channelImgFlag":0,"contentImgFlag":0,"relateIds":"","relateSurvey":"","typeFlag":"-1","topFlag":1,"otherFlag":0,"modelId":82,"siteId":5,"allowCommend":1,"moodT1Count":0,"moodT2Count":0,"moodT3Count":0,"moodT4Count":0,"moodT5Count":0,"moodT6Count":0,"moodT7Count":0,"moodT8Count":0,"moodT9Count":0,"moodT10Count":0,"className":"国内新闻","pubDate":1463107438000,"isPage":false,"contentUrl":"http://192.168.1.100/content/2016/702.html"},{"contentId":700,"classId":10658,"refCid":-1,"linkCid":-1,"title":"广西政协经济委员会主任连友农涉严重违纪被查","author":"中央纪委监察部网站","creator":"admin","summary":"　　原标题：广西壮族自治区政协经济委员会主任连友农被调查 　　据广西壮族自治区纪委消息：广西壮族自治区政协常委、自治区政协经济委员会主任连友农因涉嫌严重违纪，目前正在接受组织调查。 　　 连友农简历 　　连友农，男，汉族","addTime":1462876369000,"clickMonthCount":2,"clickWeekCount":2,"clickDayCount":0,"clickCount":82,"commMonthCount":0,"commWeekCount":0,"commDayCount":0,"commCount":0,"supportCount":73,"againstCount":0,"systemHandleTime":"2016-05-10 18:32:49.781","staticPageUrl":"content/2016/700.html","produceType":3,"censorState":1,"isPageContent":0,"isSystemOrder":1,"orderIdFlag":700,"keywords":"广西 政协 经济委员会 主任 严重 ","pubDateSysDT":21822,"appearStartDateTime":1462876369000,"appearEndDateTime":253402271999000,"homeImgFlag":0,"classImgFlag":0,"channelImgFlag":0,"contentImgFlag":0,"relateIds":"","relateSurvey":"","topFlag":1,"otherFlag":0,"modelId":82,"siteId":5,"allowCommend":1,"moodT1Count":21,"moodT2Count":0,"moodT3Count":0,"moodT4Count":0,"moodT5Count":0,"moodT6Count":0,"moodT7Count":0,"moodT8Count":0,"moodT9Count":0,"moodT10Count":0,"className":"国内新闻","pubDate":1462876369000,"isPage":false,"contentUrl":"http://192.168.1.100/content/2016/700.html"}],"isEnd":false,"endPos":5,"size":3};
+    $(function() {
+      $("#json").JSONView(json);
+
+      $("#json-collapsed").JSONView(json, { collapsed: true, nl2br: true, recursive_collapser: true });
+
+      $('#collapse-btn').on('click', function() {
+        $('#json').JSONView('collapse');
+      });
+
+      $('#expand-btn').on('click', function() {
+        $('#json').JSONView('expand');
+      });
+
+      $('#toggle-btn').on('click', function() {
+        $('#json').JSONView('toggle');
+      });
+
+      $('#toggle-level1-btn').on('click', function() {
+        $('#json').JSONView('toggle', 1);
+      });
+
+      $('#toggle-level2-btn').on('click', function() {
+        $('#json').JSONView('toggle', 2);
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>Data</h2>
+  <button id="collapse-btn">Collapse</button>
+  <button id="expand-btn">Expand</button>
+  <button id="toggle-btn">Toggle</button>
+  <button id="toggle-level1-btn">Toggle level1</button>
+  <button id="toggle-level2-btn">Toggle level2</button>
+  <div id="json"></div>
+  <h2>Data Collapsed</h2>
+  <div id="json-collapsed"></div>
+</body>
+</html>

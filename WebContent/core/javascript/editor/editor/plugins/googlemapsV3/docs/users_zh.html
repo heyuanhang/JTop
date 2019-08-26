@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GoogleMaps plugin</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>FCKeditor 插件 — Google Maps V3</h1>
+<div id="languages"> 简体中文版</div>
+<h2>前置说明</h2>
+<p>此插件修改自<a href="http://martinezdelizarrondo.com/googlemaps/" target="_blank"> Martínez de Lizarrondo</a>的1.98开源版</p>
+<h2>修改记录</h2>
+<p>1、使用Google Maps V3 版</p>
+<p>2、在原有基础上增加叠加层-多边形</p>
+<p>3、标记提示文字增加使用Fckeditor编辑器</p>
+
+<h2>使用说明</h2>
+<h3>1、将googlemapsV3目录复制到FCK的插件目录</h3>
+<h3>2、修改FCK配置文件</h3>
+<p>注册googlemapsV3</p>
+<code>FCKConfig.Plugins.Add( 'googlemapsV3', 'zh-ch') ;</code>
+<p>googlemapsV3添加至工具栏</p>
+    <code>FCKConfig.ToolbarSets[&quot;Basic&quot;] = [<br />
+  ['Bold','Italic','-','OrderedList','UnorderedList','-','Link','Unlink',
+  '-'<strong>,'googlemapsV3'</strong>,'-','About']<br />
+] ;</code>
+<p>配置插件默认值（可选）</p>
+    
+<ul>
+  <li>FCKConfig.<strong>GoogleMaps_Width</strong> : 默认地图宽度</li>
+  <li>FCKConfig.<strong>GoogleMaps_Height</strong> : 默认地图高度</li>
+  <li>FCKConfig.<strong>GoogleMaps_CenterLat</strong> : 地图中心点经纬度之经度</li>
+  <li>FCKConfig.<strong>GoogleMaps_CenterLon</strong> :地图中心点经纬度之纬度</li>
+  <li>FCKConfig.<strong>GoogleMaps_Zoom</strong> : 缩放级别</li>
+  <li>FCKConfig.<strong>GoogleMaps_MarkerPoints</strong> : 默认标签</li></ul>
+  示例<code>
+  FCKConfig.GoogleMaps_Width = "600";<br />
+FCKConfig.GoogleMaps_Height = "380";<br />
+FCKConfig.GoogleMaps_CenterLat = "31.22473";<br />
+FCKConfig.GoogleMaps_CenterLon = "121.52956";<br />
+FCKConfig.GoogleMaps_Zoom = "16";<br />
+  FCKConfig.GoogleMaps_MarkerPoints = new Array({ lat: 31.22457, lon: 121.5292, title: '我的工作地点' }</code>
+<h3>3、修改googleMaps.html页面配置提示文字FCK编辑器</h3>
+<p>文件位于googlemapsV3/dialog下</p>
+修改下列语句 配置为自己的FCKeditor目录
+<code> &lt;script type=&quot;text/javascript&quot; src=&quot;/FCKeditor/fckeditor.js&quot;&gt;&lt;/script&gt;</code>
+修改下列语句 配置FCKeditor基本目录
+<code>FCKeditor.BasePath = "/FCKeditor/";</code>
+修改下列语句 配置FCKeditor默认工具栏
+<code>oFCKeditor.ToolbarSet = "Basic";</code>
+
+<h3>4、清空缓存 开始使用</h3>
+作者：QTmanage  邮箱：manage@qtmanage.com
+</body>
+</html>

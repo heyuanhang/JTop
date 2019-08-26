@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{background:#fafafc;}
+
+
+
+.layoutLeft{background:#fff;border-radius:2px 2px 0 0;border:1px solid #f7f7f7; border-top:none; border-bottom:1px solid #f0f0f0;}
+	/*幻灯及视频新闻开始*/
+	.leftNews{width:310px;overflow:hidden;position:relative;z-index:2;}
+	.news-height{height:500px;}
+	
+		/*幻灯开始*/
+		.slider310 {width:310px;height:265px;}
+		#slides{ width:310px; height:240px; position:relative; overflow:hidden;}
+		.slidesjs-container{ height:220px;}
+		.slidesjs-control{ height:220px;}
+		.ma{display:block; width:310px; height:220px; color:#ECECEC; text-align:center;}
+		.ma img{ width:100%; height:100%;}
+		.slidesjs-pagination{padding-left:55px; width:255px; padding-top:10px; height:17\px; position:absolute; left:0; background:#fff; z-index:100;}
+		.slidesjs-navigation{background:url(../images/sprite.png) no-repeat; position:absolute; z-index:12;display:block;width:29px;height:34px;overflow: hidden;text-indent: -9999px;top:86px;}
+		.slidesjs-previous{left:7px; background-position:0 -110px;}
+		.slidesjs-previous:hover{left:7px; background-position:0 -149px;}
+		.slidesjs-next{right:7px; background-position:0 -190px;}
+		.slidesjs-next:hover{right:7px; background-position:0 -229px;}
+		.bg{ display:block; width:310px; height:40px; line-height:40px; background:#000; top:180px; opacity:0.7; z-index:10; filter:alpha(opacity=70); left:0; position:absolute;}
+		.ma strong{display:block; width:310px; height:40px; line-height:40px; color:#ececec; top:180px;z-index:11; left:0; position:absolute; font-size:14px;}
+		.ma:hover strong{ color:#fff;}
+		.slidesjs-pagination li{float: left;margin: 0 1px;}
+		.slidesjs-pagination li a{display: block; width:20px;height:5px;background:#eee;float:left;overflow: hidden; text-indent:-999em; -moz-border-shadow:1px 1px 1px #A9A9A9 inset; margin:0 6px; display:inline;}
+		.slidesjs-pagination li a.active,.slidesjs-pagination li a:hover.active,.slidesjs-pagination li a:hover{background:#5AA4C9; -moz-border-shadow:1px 1px 1px #1678A0 inset}
+		/*幻灯结束*/
+		
+		/*视频新闻开始*/
+		.layout-video{height:auto;}
+		.tab-bd-con{padding-right:10px;}
+		
+		/*视频新闻结束*/
+	
+	/*幻灯及视频新闻结束*/
+	
+	
+		/*要闻开始*/
+		.layout-news{width:100%; overflow:hidden;}
+		.tab-hd .title-con{height:18px; border-top:1px solid #fff;padding:5px 10px;}
+		.tab-main .tab-hd, .tab-hd, .tab-product .tab-hd, .tab-area .tab-hd{overflow:hidden;height:30px;border-bottom:1px solid #f5f5f5;background:#fbfbfb; border-top:1px solid #0063cf;}
+		.tab-hd .title-con b{display:block; line-height:18px; border-left:3px solid #0063cf; padding-left:5px; font-size:14px; color:#333; position:relative; height:18px;}
+		.tab-hd .title-con .more{position:absolute; right:0px; top:0px;width:18px; height:18px; line-height:18px; text-align:center; display:block;}
+		.tab-hd .title-con .more a{display:block; line-height:18px; text-decoration:none;}
+		.tab-bd-photo a .fa-image,.tab-bd-con a .fa-youtube-play{color:#ccc;}
+		.tab-bd-photo a:hover .fa-image,.tab-bd-con a:hover .fa-youtube-play{color:#0063cf;}
+		
+		/*要闻结束*/
+		
+		
+		
+		
+		
+/*右侧模块*/
+
+
+	/*视频*/
+	.box-bd-padding{padding:15px 5px 5px 5px; overflow:hidden;}
+	.box-bd-padding li{display:block; float:left; width:50%; overflow:hidden; padding-bottom:10px;}
+	.box-bd-padding .video-box{width:134px; margin:0 auto; overflow:hidden;}
+	.box-bd-padding .video-box .sapn-img{width:100%; height:77px; display:block;}
+	.box-bd-padding .video-box .sapn-img img{width:100%; height:77px;}
+	.box-bd-padding .video-box .sapn-name{display:block; line-height:25px; text-align:left;}
+	.box-bd-padding .video-box .sapn-ico{display:block; line-height:14px; padding:0 2px; color:#ccc;}
+	/*视频结束*/
+	
+	
+	/*广告1*/
+	.ad-106{background:#eee; height:106px;}
+	.ad-250{width:300px; height:250px;}
+	.ad-126{height:126px; background:#eee;}
+
+
+/*左右模块结束*/
+
+
+/*图片新闻开始*/
+
+.index-picture{width:100%; overflow:hidden; padding:15px 0;}
+.index-picture ul{padding:0 5px;}
+.index-picture li{display:block; float:left; width:20%;}
+.index-picture li .pic-box{width:181px; height:142px; margin:0 auto;}
+.index-picture li .pic-box .imgs,.index-picture li .pic-box .imgs img{width:181px; height:112px; display:block; background:#f5f5f5;}
+.index-picture li .pic-box .i-text{display:block; line-height:30px; text-align:center;}

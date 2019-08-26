@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>tab切换</title>
+<link href="images/test.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/tab_change.js"></script>
+</head>
+<body>
+
+<div class="auntion_tagRoom">
+  <ul>
+    <li id="two1" onmouseover="setTab2('two',1,5)" class="selectTag"> <a href="javascript:;">图片上传</a> </li>
+    <li id="two2" onmouseover="setTab2('two',2,5)"> <a href="javascript:;" >图片库    </a> </li>
+  
+  </ul>
+</div>
+
+<div class="auntion_tagRoom_Content">
+  <div id="g3_two_1" class="auntion_Room_C_imglist" style="display:block;">
+    <ul>
+      <li>1</li>
+    </ul>
+  </div>
+  <div id="g3_two_2" class="auntion_Room_C_imglist" style="display:none;">
+    <ul>
+      <li>2</li>
+    </ul>
+  </div>
+ 
+  
+</div>
+<!--
+js修改：
+setTab2------setTab3
+g3-------g4
+页面修改：
+two1-----tree1
+setTab2('two',1,3)------setTab3('three',1,3)
+g3_two_1------g4_three_1
+
+
+
+-->
+</body>
+</html>

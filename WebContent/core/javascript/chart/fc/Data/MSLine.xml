@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="GBK"?>
+<graph baseFont='SunSim' baseFontSize='12' borderThickness='1' borderAlpha='40' xAxisName='' yAxisName='访问数' hovercapbg='FFECAA' hovercapborder='F47E00' bgAlpha='65' showColumnShadow='1' formatNumberScale='0' decimalPrecision='0' showvalues='0' numdivlines='4' numVdivlines='0'>
+
+
+	<!--<graph baseFont='SunSim' 
+		baseFontSize='12'
+		xAxisName='日期'
+		yAxisName='访问量' 
+		showValues='0'
+		decimalPrecision='0' 
+		bgcolor='FFFFFF'
+		bgAlpha='70' 
+		showColumnShadow='1'
+		divlinecolor='c5c5c5'
+		divLineAlpha='60' 
+		showAlternateHGridColor='1' 
+		alternateHGridColor='f8f8f8' 
+		alternateHGridAlpha='60' 
+		formatNumberScale='0'>
+	-->
+	<categories>
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+		<category name='2014-12-12' />
+
+	</categories>
+	<dataset seriesName='PV访问量' color='1D8BD1' anchorBorderColor='1D8BD1' anchorBgColor='1D8BD1'>
+		<set value='1327' />
+		<set value='1826' />
+		<set value='1699' />
+		<set value='1511' />
+		<set value='1904' />
+		<set value='1957' />
+		<set value='1296' /><set value='1904' />
+		<set value='1957' />
+		<set value='1296' />
+	</dataset>
+
+	<dataset seriesName='UV访问量' color='F1683C' anchorBorderColor='F1683C' anchorBgColor='F1683C'>
+		<set value='2042' />
+		<set value='3210' />
+		<set value='2994' />
+		<set value='3115' />
+		<set value='2844' />
+		<set value='3576' />
+		<set value='1862' /><set value='1904' />
+		<set value='1957' />
+		<set value='1296' />
+	</dataset>
+
+	<dataset seriesName='IP访问量' color='2AD62A' anchorBorderColor='2AD62A' anchorBgColor='2AD62A'>
+		<set value='850' />
+		<set value='1010' />
+		<set value='1116' />
+		<set value='1234' />
+		<set value='1210' />
+		<set value='1054' />
+		<set value='802' /><set value='1904' />
+		<set value='1957' />
+		<set value='1296' />
+	</dataset>
+
+
+
+</graph>

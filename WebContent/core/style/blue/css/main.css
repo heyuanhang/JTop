@@ -1,0 +1,720 @@
+html,body {
+	width: 100%;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.red {
+	color: #C00;
+}
+
+.minheight300 {
+	height: 300px;
+	min-height: 300px;
+}
+
+.fl_but_div {
+	float: left;
+	padding-left: 5px
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.cursor {
+	cursor: pointer;
+}
+
+.img-icon {
+	vertical-align: middle;
+}
+
+.breadnav {
+	height: 25px;
+	width: 100%;
+	background: #e2e9ea;
+	color: #666;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	line-height: 25px;
+}
+
+.breadnavTab {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom:0;
+	z-index: 998;
+	padding:5px 0px 0px 0px;
+	background:#fff url(../images/btnbg100.jpg) repeat-x top;
+}
+
+* html .breadnav {
+	position: absolute;;
+	left: expression(eval(document .             documentElement .           
+		 scrollLeft +0) );;
+	top: expression(eval(document .             documentElement .           
+		 scrollTop +0) )
+}  /*for ie6 fixed*/
+.breadnav .home {
+	margin-top: 4px !important; /* IE8、Ff、Opera、Safari*/ *
+	margin-top: 0px !important; /*ie7 6*/
+}
+
+.mainbody {
+	background: url(../images/main_bg.gif) left top no-repeat;
+	/*height:300px; min-height:300px;*/
+	padding-top: 8px;
+	padding-left: 8px;
+}
+
+.mainbody {
+	background: url(../images/main_bg.gif) left top no-repeat;
+	/*height:300px; min-height:300px;*/
+	padding-top: 8px;
+	padding-left: 8px;
+	position: relative;
+}
+
+.mainbody-x {
+	background: url(../images/main_bg-x.gif) repeat-x;
+}
+
+.mainbody-right {
+	background: url(../images/main_bg-right.gif) no-repeat right top;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 10px;
+	height: 200px;
+	font-size: 0px;
+	z-index: 999;
+}
+
+/* 自适应选项卡 */
+ul,li {
+	margin: 0;
+	padding: 0;
+}
+
+div.auntion_tagRoom {
+	width: 100%;
+	height: 28px;
+	overflow: hidden;
+	background: url(../images/titbg.jpg) repeat-x bottom;
+	margin-top: 18px;
+}
+
+div.auntion_tagRoom ul,div.auntion_tagRoom ul li {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: auto;
+}  /* 首先清除所有样式 */
+div.auntion_tagRoom ul {
+	margin: 2px 0 0 10px;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+	clear: both;
+	zoom: 1;
+}
+
+div.auntion_tagRoom ul li {
+	margin: 0 4px 0 0;
+	padding: 0 0 0 10px;
+	border: 0;
+	list-style-type: none;
+	float: left;
+	background: url(../images/tableft.gif) no-repeat left top;;
+	height: 26px;
+	font-size: 13px;
+}
+
+div.auntion_tagRoom ul li a {
+	margin: 0 0 0 0;
+	padding: 0px 6px 0 2px;
+	border: 0;
+	list-style-type: none;
+	float: left;;
+	text-decoration: none;
+	background: url(../images/tabright.gif) no-repeat right top;
+	width: auto;
+	height: 26px;
+	line-height: 26px;
+	color: #666;
+}
+
+div.auntion_tagRoom ul li:hover {
+	background-position: left bottom;
+	position: relative;
+}
+
+div.auntion_tagRoom ul li a:hover {
+	background-position: right bottom;
+	color: #006;
+}
+
+div.auntion_tagRoom ul li a img {
+	vertical-align: middle;;
+	margin-right: 3px;
+	_margin-top: 5px;
+}
+
+div.auntion_tagRoom ul li.selectTag {
+	width: auto;
+	height: 26px;;
+	background-position: left bottom;
+	position: relative;
+	margin-bottom: -2px;
+}
+
+div.auntion_tagRoom ul li.selectTag a {
+	background-position: right bottom;
+	color: #006;
+}  /* 选项卡内容容器 */
+div.auntion_tagRoom_Content {
+	width: 100%;
+	height: auto;
+	padding: 0;
+}
+
+/*form table*/ /*add:所有类表的form,现在改为style:10px,原15px*/
+table.form-table-big tr td {
+	padding-top: 10px;
+}
+
+/*add:一些管理信息页需要13px*/
+table.form-table-big-manage tr td {
+	padding-top: 13px;
+}
+
+/*add:一些管理信息页需要15px*/
+table.form-table-big-content tr td {
+	padding-top: 15px;
+}
+
+/*add:原form 15px*/
+table.form-table tr td {
+	padding-top: 20px;
+}
+
+table.form-table-upload tr td {
+	padding-top: 0px;
+}
+
+.input-title {
+	color: #666;
+	text-align: right;
+}
+
+.td-input {
+	padding-left: 10px;
+}
+
+.form-input {
+		background: url(../images/inputbg.jpg) repeat-x top  ;
+	-moz-border-radius: 2px 2px 2px 2px;
+	 border: 1px solid #CECECF;
+  
+	color: #336699;
+	padding-left: 2px;
+	vertical-align: middle;
+	height: 29px;
+}
+
+/* add:标题为黑字*/
+.form-input-title {
+	background: url(../images/inputbg.jpg) repeat-x top #F7FAFC;
+	-moz-border-radius: 2px 2px 2px 2px;
+	  border: 1px solid #CECECF;
+  
+	padding-left: 2px;
+	vertical-align: middle;
+	height: 20px;
+}
+
+.form-input-file {
+	background: url(../images/inputbg.jpg) repeat-x top #F7FAFC;
+	-moz-border-radius: 2px 2px 2px 2px;
+	 border: 1px solid #CECECF;
+	color: #336699;
+	padding-left: 2px;
+	vertical-align: middle;
+	height: 27px;
+}
+
+.form-input-date {
+	background: #F7FAFC url(../icon/date_picker.gif) no-repeat right;
+	-moz-border-radius: 2px 2px 2px 2px;
+	 border: 1px solid #CECECF;
+	color: #336699;
+	padding-left: 2px;
+	vertical-align: middle;
+	height: 26px;
+}
+
+.form-input-top-date {
+	background: #F7FAFC url(../icon/date_picker.gif) no-repeat right;
+	-moz-border-radius: 2px 2px 2px 2px;
+	 border: 1px solid #CECECF;
+	color: #336699;
+	padding-left: 2px;
+	vertical-align: top;
+	height: 26px;
+}
+
+.form-input-time {
+	background: #F7FAFC url(../icon/time_picker.png) no-repeat right;
+	-moz-border-radius: 2px 2px 2px 2px;
+ border: 1px solid #CECECF;
+	color: #336699;
+	padding-left: 2px;
+	vertical-align: middle;
+	height: 26px;
+}
+
+.from-img-icon {
+	padding-left: 2px;
+	vertical-align: middle;
+}
+
+.form-select {
+padding-left: 2px;
+	vertical-align: middle;
+	height: 28px;
+}
+
+.form-radio {
+	padding-left: 0px;
+	vertical-align: middle;
+	height: 28px;
+}
+
+.form-checkbox {
+	padding-left: 0px;
+	vertical-align: middle;
+	height: 28px;
+}
+
+.form-input:focus {
+	border-color: #ff8800;
+}
+
+.titlerule {
+	background: url(../images/ruler.gif) no-repeat left bottom;
+}
+
+.form-textarea {
+	background: url(../images/inputbg.jpg) repeat-x top  ;
+	-moz-border-radius: 2px 2px 2px 2px;
+	 border: 1px solid #CECECF;
+ 
+	color: #369;
+	padding: 2px 2px 3px;;
+	-moz-border-radius: 2px 2px 2px 2px;
+}
+
+.td-input select {
+	color: #336699;;
+	border-color: #778899 #AABBCC #AABBCC #8899AA;
+	border-style: solid;
+	border-width: 1px;;
+	-moz-border-radius: 2px 2px 2px 2px;;
+	padding-left: 2px;
+}
+
+.ps {
+	color: #999;
+}
+
+/*新加的,为了图片有cursor: pointer;*/
+.a_pointer {
+	cursor: pointer;
+}
+
+/*某些情况下不需要	float: left;*/
+a.btnwithico-single {
+	-moz-user-select: none;
+	background: url(../images/bt_bg_left.gif) no-repeat scroll left center
+		transparent;
+	height: 24px;
+	margin: 0 5px 0 0;
+	text-decoration: none;
+}
+
+/*某些情况下不需要	float: left;*/
+a.btnwithico-single:hover {
+	background: url(../images/bthover_bg_left.gif) no-repeat scroll left
+		center transparent;
+	text-decoration: none;
+}
+
+/*某些情况下不需要	float: left;*/
+a.btnwithico-single img {
+	float: left;
+	margin: 4px;
+}
+
+/*某些情况下不需要	float: left;*/
+a.btnwithico-single b {
+	background: url(../images/bt_bg_right.gif) no-repeat scroll right center
+		transparent;
+	color: #666;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: normal;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 4px 0 3px;
+	white-space: nowrap;
+}
+
+/*某些情况下不需要	float: left;*/
+a.btnwithico-single:hover b {
+	background: url(../images/bthover_bg_right.gif) no-repeat scroll right
+		center transparent;
+	color: #114477;
+}
+
+/*add:margin: 5px 又改回0px,因为高度会影响排列,若需要高度效果,只需要在用时加5px*/ /*btn*/
+a.btnwithico {
+	-moz-user-select: none;
+	background: url(../images/bt_bg_left.gif) no-repeat scroll left center
+		transparent;
+	float: left;
+	height: 24px;
+	margin: 0px 10px 0 0;
+	text-decoration: none;
+}
+
+a.btnwithico img {
+	float: left;
+	margin: 4px;
+}
+
+a.btnwithico b {
+	background: url(../images/bt_bg_right.gif) no-repeat scroll right center
+		transparent;
+	color: #666;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: normal;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 4px 0 3px;
+	white-space: nowrap;
+}
+
+a.btnwithico:hover {
+	background: url(../images/bthover_bg_left.gif) no-repeat scroll left
+		center transparent;
+	text-decoration: none;
+}
+
+a.btnwithico:hover b {
+	background: url(../images/bthover_bg_right.gif) no-repeat scroll right
+		center transparent;
+	color: #114477;
+}
+
+/*
+tr.btnbg100 {
+	background: url(../images/btnbg100.jpg) repeat-x bottom;
+}
+*/
+.form-input-1 {
+	background: url(../images/inputbg.jpg) repeat-x top #F7FAFC;
+	-moz-border-radius: 2px 2px 2px 2px;
+	border-color: #778899 #AABBCC #AABBCC #8899AA;
+	border-style: solid;
+	border-width: 1px;
+	color: #336699;
+	padding-left: 2px;
+	vertical-align: middle;
+	height: 18px;
+}
+
+.form-input-1:focus {
+	border-color: #ff8800;
+}
+
+.select-1 {
+	color: #336699;;
+	border-color: #778899 #AABBCC #AABBCC #8899AA;
+	border-style: solid;
+	border-width: 1px;;
+	-moz-border-radius: 2px 2px 2px 2px;;
+	padding-left: 2px;
+	vertical-align: middle;
+	height: 22px;
+}
+
+.btn-1 {
+	background: url(../images/btn-1.gif) no-repeat;
+	width: 52px;
+	height: 21px;
+	border: none;
+	vertical-align: middle;
+	cursor: pointer;
+	line-height: 21px;;
+	color: #336699;
+}
+
+.btn-1:hover {
+	color: #F90;
+}
+
+/*list table*/
+table.listdate {
+	border: 1px solid #ccc;
+	border-bottom-width: 0;
+}
+
+/*list table 高度为48px*/
+table.listdate-high {
+	border: 1px solid #ccc;
+	border-bottom-width: 0;
+}
+
+table.listdate-high tr td {
+	border-bottom: 1px solid #ccc;
+	padding-left: 5px;
+	height: 45px;
+}
+
+/*list table 高度为28px*/
+table.listdate-low {
+	border: 1px solid #ccc;
+	border-bottom-width: 0;
+}
+
+table.listdate-low tr td {
+	border-bottom: 1px solid #ccc;
+	padding-left: 5px;
+	height: 28px;
+}
+
+/*height原为25px，现改为49px*/
+table.listdate tr td {
+	border-bottom: 1px solid #ccc;
+	padding-left: 5px;
+	height: 53px;
+}
+
+
+
+
+
+.listdate-show{
+	border-bottom: 1px  dashed  #e4e4e4;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 60px;
+}
+
+.listdate-show-data{
+	border-bottom: 1px  dashed  #e4e4e4;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 60px;
+}
+
+
+
+table tr.datahead th,table tr.datahead td {
+	border-left: 1px solid #ccc;
+	background: #f1f1f1;;
+	color: #666;;
+	padding-left: 5px;
+	height: 26px;
+}
+
+.PageBar {
+	line-height: 25px;
+}
+
+/*add article*/
+.addtit {
+	width: 100%;
+	height: 28px;
+	overflow: hidden;
+	background: url(../images/titbg.jpg) repeat-x bottom;
+	line-height: 28px;
+}
+
+.addtit img {
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+/*work*/
+.scroll {
+	width: 689px;
+	margin-left: 0px;
+	overflow: hidden;
+	float: left;
+	margin-top: -5px;
+}
+
+.scroll ul li {
+	width: 150px;
+	height: 57px;
+	float: left;
+	margin-right: 0px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.restit {
+	width: 98%;
+	height: 28px;
+	overflow: hidden;
+	background: url(../images/titbg.jpg) repeat-x bottom;
+	line-height: 28px;
+}
+
+.onLoad {
+	background: url(../images/onLoad.gif) no-repeat 3px 10px;;
+	padding-left: 25px;;
+	font-size: 13px;
+	color: #999;
+	vertical-align: middle
+}
+
+.onCorrect {
+	display: inline-block;
+	height: 34px;
+	background: url(../images/ok_01.png) no-repeat 0 11px;
+	padding-left: 15px;
+	vertical-align: middle;
+	padding-right: 5px;;
+	width: 180px !important
+}
+
+.onFocus,.onShow,.onLoad {
+	height: 34px;;
+	line-height: 34px;
+	color: #999;
+	width: 180px !important
+}
+
+.onError {
+	/* add: 不需要此图片background: url(../images/error_01.png) left 10px no-repeat; */
+	/* add:pad改为0 */
+	padding-left: 0px;
+	width: 280px !important
+}
+
+.onError-bottom { /* 宽度调整*/
+	width: 128px;
+	background: url(../images/bottom-left-w.gif) left bottom no-repeat;
+}
+
+.onError-right {
+	background: url(../images/bottom-right-w.gif) right bottom no-repeat;
+}
+
+.onError-left {
+	background: url(../images/top-left-w.gif) left top no-repeat;
+}
+
+.onError-top-right {
+	background: url(../images/top-right-w.gif) right top no-repeat;
+	line-height: 13px !important;
+	padding: 11px 10px 16px 20px
+}
+
+.listtable {
+	margin-left: 0px auto;
+}
+
+.table_inside {
+	border: 0px;
+	margin-bottom: 10px;
+}
+
+.table_inside td {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#preview_wrapper {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #ccc;
+}
+
+#preview_fake { /* 该对象用于在IE下显示预览图片 */
+	filter: progid :     DXImageTransform .     Microsoft .  
+		  AlphaImageLoader(sizingMethod =     scale);
+}
+
+#preview_size_fake { /* 该对象只用来在IE下获得图片的原始尺寸，无其它用途 */
+	filter: progid :     DXImageTransform .     Microsoft .  
+		  AlphaImageLoader(sizingMethod =     image);
+	visibility: hidden;
+}
+
+#preview { /* 该对象用于在FF下显示预览图片 */
+	display: block;
+	width: auto;
+	height: auto;
+}
+
+/*用于tr背景变色*/
+.tdbgyew {
+	background: #ffffb5;
+}
+
+.tdbgyewck {
+	background: #ffffb5;
+}
+
+
+
+input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+input:-ms-input-placeholder {
+    color: #ccc;
+}
+
+input:-moz-placeholder {
+    color: #ccc;
+}
+
+input::-moz-placeholder {
+    color: #ccc;
+}
+
+
+textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+
+textarea:-moz-placeholder {
+    color: #ccc;
+}
+
+textarea::-moz-placeholder {
+    color: #ccc;
+}

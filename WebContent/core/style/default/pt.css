@@ -1,0 +1,77 @@
+BODY {
+	PADDING-TOP: 5px;
+	PADDING-RIGHT: 5px;
+	BACKGROUND-POSITION: left top;
+	PADDING-LEFT: 5px;
+	FONT-SIZE: 12px;
+	PADDING-BOTTOM: 15px;
+	MARGIN: 0px;
+	COLOR: #000000;
+}
+
+.content_td {
+	FONT-SIZE: 14px;
+	FONT-FAMILY: "ËÎÌו";
+	text-align: right;
+}
+
+.title_td {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	COLOR: #333;
+	TEXT-ALIGN: right
+}
+
+.head_title {
+	background-color: #FFFFFF;
+	background: url(images/bg.gif);
+	padding-left: 2px
+}
+
+form {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px
+}
+
+.f_input {
+	BORDER-RIGHT: #bed8e9 1px solid;
+	PADDING-RIGHT: 0px;
+	BORDER-TOP: #bed8e9 1px solid;
+	PADDING-LEFT: 0px;
+	BACKGROUND: url(images/input_background.gif) repeat-x;
+	PADDING-BOTTOM: 0px;
+	BORDER-LEFT: #bed8e9 1px solid;
+	LINE-HEIGHT: 21px;
+	PADDING-TOP: 0px;
+	BORDER-BOTTOM: #bed8e9 1px solid;
+	HEIGHT: 21px
+}
+
+.f_text {
+	BORDER-RIGHT: #bed8e9 1px solid;
+	PADDING-RIGHT: 0px;
+	BORDER-TOP: #bed8e9 1px solid;
+	PADDING-LEFT: 0px;
+	BACKGROUND: url(images/input_background.gif) repeat-x;
+	PADDING-BOTTOM: 0px;
+	BORDER-LEFT: #bed8e9 1px solid;
+	LINE-HEIGHT: 21px;
+	PADDING-TOP: 0px;
+	BORDER-BOTTOM: #bed8e9 1px solid;
+}
+
+
+.special_button {
+	background-image: url(../images/button_bg.gif);
+	border: 1px solid #A6A6A6;
+	height: 30px;
+	padding-right: 1px;
+	padding-left: 1px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-size: 12px;
+	cursor: hand;
+}

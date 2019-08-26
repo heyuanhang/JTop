@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  
+    <style type="text/css">
+            ins {
+                background-color: #cfc;
+                text-decoration: none;
+            }
+            
+            del {
+                color: #999;
+                background-color: #FEC8C8;
+            }
+            .text {
+                float:left;
+                width: 30%;
+                border: 1px solid blue;
+                margin: 10px;
+            }
+        </style>
+</head>
+<body>
+    <h2>"HTML DIFF工具"Demo</h2>
+    <div class="text"> <b>旧版本：</b>
+        <div id="oldT">
+              
+              <code>&lt;cms:Content/&gt;</code>
+              
+        </div>
+    </div>
+    <div class="text" style="border:1px solid red;"> <b>DIFF：<button id="diffBtn">对比</button></b>
+        <div id="diff">
+        </div>
+    </div>
+    <div class="text">
+        <b>新版本：</b>
+        <div id="newT">
+          &lt;cms:Content&gt;22222 &lt;/cms:Content&gt;
+        </div>
+    </div>
+    <!--理应此段脚本只在不支持webworker的情况下异步加载-->
+    <!--但是我太懒了，实在不想写了，凑合凑合完事了╮(╯▽╰)╭-->
+    <script type="text/javascript" src="diff.js"></script>
+    <script type="text/javascript">
+        var diffBtn = document.getElementById("diffBtn");
+        var diff = document.getElementById('diff');
+        diffBtn.onclick = function () {
+          diff.innerHTML = '<img style="margin-left:48%" src="http://img.t.sinajs.cn/t5/style/images/common/loading.gif">';
+          var oldT = document.getElementById('oldT').innerHTML;
+          var newT = document.getElementById('newT').innerHTML;
+         // if(typeof Worker === "undefined"){
+            diff.innerHTML = getHTMLDiff(oldT, newT);
+          //} else{
+         //   var worker = new Worker('htmldiff.js');
+          //  worker.postMessage({
+          //    'newVersion': newT,
+          //    'oldVersion': oldT
+          //  });
+          //  worker.onmessage = function (evt) {
+//diff.innerHTML = evt.data;
+          //  };
+         // }
+        };
+    </script>
+</body>
+</html>

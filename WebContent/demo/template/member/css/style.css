@@ -1,0 +1,235 @@
+@charset "UTF-8";
+/* CSS Document */
+body{padding:0; margin:0; font-family:"Microsoft YaHei";}
+ul,li,p,form,h1,h2,h3,h4,h5,h6,dl,dt,dd{display:block; padding:0; margin:0; list-style-type:none;}
+.fl{float:left;}
+.fr{float:right;}
+.plr5{padding:0 5px;}
+.header{width:100%;height:45px;background: #fafafa;border-top:2px solid #06c;box-shadow: 0 1px 1px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.15);}
+.user-box{width:960px; margin:0 auto; overflow:hidden; position:relative;}
+.header .logo{float:left;height:35px; padding:5px 0;}
+.header .logo img{height:35px;}
+.header .nav{float:left; height:45px; padding-left:50px; font-size:14px; width:300px;}
+.header .nav li{float:left; height:45px; padding:0 20px;}
+.header .nav li a{display:block; line-height:43px;color:#333; text-decoration:none;}
+.header .nav li a:hover{color:#06c; border-bottom:2px solid #06c;}
+
+.header .user{float:right;height:45px;}
+.header .user-avatar{position: relative;color: #fff;padding-left:20px;overflow: hidden;font-size:12px;}
+.header .user-avatar .avatar{float:left; display:block; width:25px; height:25px; margin:8px 0; background:#06c; border:1px solid #eee;}
+.header .user-avatar .name{float: left;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;padding-left:10px;display:block;line-height:45px;}
+.header .user-avatar .msg-count{color: #f76120;font-family: arial,sans-serif; padding:0 2px;}
+.header .user-avatar a{color:#666; text-decoration:none; padding-left:10px;}
+.header .user-avatar a:hover{color:#06c;}
+
+
+.container{width:960px;margin: 35px auto 0;padding-bottom:100px; overflow:hidden;}
+
+
+.my_myresume_l{float:left;width:240px; overflow:hidden; font-size:14px;}
+
+.my_user{padding:16px 5px;border: 1px solid #f2f2f2;
+background:#fafafa url(../images/Layer-12.jpg) no-repeat top center;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius:0px;
+margin-bottom: 19px;
+}
+.my_user .avatar{width:64px; height:64px; margin:0 auto; border-radius:0; border:2px solid #fff;box-shadow: 0 1px 1px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.15);}
+.my_user .avatar img{width:64px; height:64px;}
+.my_user .name{line-height:30px; padding:10px 0; text-align:center;}
+.my_user .u-tips{width:100%; overflow:hidden;}
+.my_user .u-tips li{float:left; width:33%;}
+.my_user .u-tips .li-line{border-right:1px solid #eee;}
+.my_user .u-tips li a{display:block; margin:6px 0; text-align:center; text-decoration:none; color:#999; font-size:12px;}
+.my_user .u-tips b{display:block; font-size:16px; color:#333;}
+.my_module{width:100%; overflow:hidden;}
+.my_module li{height: 50px;border-right: 2px solid transparent;margin-left: -1px;border-right: 1px solid #e5e5e5;}
+.my_module li a{display:block; padding-left:30px;line-height:50px; text-decoration:none; color:#333;}
+.my_module .active{border-color:#06c;border-width:2px; background:#fafafa; color:#06c;}
+.my_module .active a{background:#fafafa; color:#06c;}
+.my_module li a:hover{background:#fafafa; color:#06c;}
+
+
+
+.my_myresume_r{float:right;width:690px;margin-bottom: 20px; background:#fafafa; min-height:800px;}
+.my_myresume_r .new_section{font-weight: normal;margin:0;font-size:18px;color:#555555; padding:10px 20px; border-bottom:1px solid #ebebeb;}
+.my_myresume_r .new_section span{line-height:52px;}
+.my_myresume_r .new_section .mr_creatr{padding-top:8px;}
+.mr_creatr a{display: inline-block;padding:8px 16px;background-color: #337ab7;border-color:#2e6da4;border-radius: 3px; text-decoration:none; color:#fff; font-size:14px;}
+.mr_creatr a:hover{background:#2e6da4;}
+.eidt-password{padding:20px; overflow:hidden;}
+.eidt-password form{color:#666;}
+.eidt-password table td{padding:15px;}
+
+.from-input{border: 2px solid #f1f1f1;outline: none;width: 300px;height: 30px;padding: 6px 10px;transition: border 0.2s ease-in 0s;}
+.from-textarea{border: 2px solid #f1f1f1;outline: none;width:420px;height:200px;padding: 6px 10px;transition: border 0.2s ease-in 0s;}
+.btn {display: inline-block;padding: 6px 12px;margin-bottom: 0;font-size: 14px;font-weight: 400;line-height: 1.42857143;text-align: center;white-space: nowrap;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-image: none;border: 1px solid transparent;
+text-decoration:none;}
+.btn-block{display:block;}
+.btn-default {color:#333;background-color: #fff;border-color: #ccc;}
+
+.btn-primary{color: #fff;background-color: #337ab7;border-color: #2e6da4;}
+.btn-primary:hover{color:#fff;background-color:#286090;border-color:#204d74}
+
+.btn-normal {
+padding:3px 8px;
+color: #333;
+background-color: #dedede;
+border: 1px solid #e3e3e3;
+border-bottom: 1px solid #aaa;
+filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF7F7F7', endColorstr='#FFDEDEDE');
+background-size: 100%;
+background-image: -moz-linear-gradient(top,#f7f7f7,#dedede);
+background-image: -webkit-linear-gradient(top,#f7f7f7,#dedede);
+background-image: linear-gradient(to bottom,#f7f7f7,#dedede);
+}
+
+
+.con_detail2{width:100%; font-size:12px;}
+.con_detail2 .title{padding-bottom:5px; width:100%;}
+.con_detail2 .title table th{padding:0px 10px; background:#f5f5f5; height:39px; border-bottom:1px solid #ddd;}
+.table-b td{border-bottom:1px dashed #ddd; padding:3px 10px; height:40px; color:#999;}
+.table-b tr:hover{background:#f3f3f3;}
+
+.con_detail2 td a{color:#333; text-decoration:none;}
+.con_detail2 td a:hover{color:#06c; text-decoration:underline;}
+
+
+
+/*分页代码*/
+
+
+
+.fenye{overflow:hidden; padding:30px 20px;}
+
+
+#kkpager{
+	clear:both;
+	height:30px;
+	line-height:30px;
+	margin-top:20px;
+	color:#999999;
+	font-size:14px;
+}
+#kkpager a{
+	padding:4px 8px;
+	margin:10px 3px;
+	font-size:12px;
+	border:1px solid #DFDFDF;
+	background-color:#FFF;
+	color:#9d9d9d;
+	text-decoration:none;
+}
+#kkpager span{
+	font-size:14px;
+}
+#kkpager span.disabled{
+	padding:4px 8px;
+	margin:10px 3px;
+	font-size:12px;
+	border:1px solid #DFDFDF;
+	background-color:#FFF;
+	color:#DFDFDF;
+}
+#kkpager span.curr{
+	padding:4px 8px;
+	margin:10px 3px;
+	font-size:12px;
+	border:1px solid #008cd6;
+	background-color:#008cd6;
+	color:#FFF;
+}
+#kkpager a:hover{
+	background-color:#008cd6;
+	border:1px solid #07679a;
+	color:#fff;
+}
+#kkpager span.normalsize{
+	font-size:12px;
+}
+#kkpager_gopage_wrap{
+	display:inline-block;
+	width:44px;
+	height:18px;
+	border:1px solid #DFDFDF;
+	margin:0px 1px;
+	padding:0px;
+	position:relative;
+	left:0px;
+	top:5px;
+}
+#kkpager_btn_go {
+	width:44px;
+	height:20px;
+	line-height:20px;
+	padding:0px;
+	font-family:arial,宋体,sans-serif;
+	text-align:center;
+	border:0px;
+	background-color:#0063DC;
+	color:#FFF;
+	position:absolute;
+	left:0px;
+	top:-1px;
+	display:none;
+}
+#kkpager_btn_go_input{
+	width:42px;
+	height:16px;
+	text-align:center;
+	border:0px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	outline:none;
+}
+
+
+/*投稿*/
+
+/*模拟下拉菜单*/
+
+.nav-select{width:324px; font-size:14px; color:#ccc;}
+.nav-select p{display:block;padding:6px 10px;line-height:30px;border:2px solid #eee;}
+.set-bg{background:#fff url(../images/ico-arrow.png) 295px 18px no-repeat; cursor:pointer;}
+.select-bg{background:#fff url(../images/ico-arrow-up.png) 295px 18px no-repeat;}
+.new{width:320px;position:absolute;border:2px solid #eee; border-top:none;display:none; background:#fff;}
+.nav-select ul li{line-height:30px;padding-left:10px;}
+.nav-select ul li:hover{background:#CCC;color:#FFF;}
+
+
+
+/*tab切换*/
+
+.user-tab{width:100%;margin:0;overflow:hidden;}
+.user-tab .test-menu{height:50px;font-size:16px;width:100%;margin:0 auto;background:#f3f3f3 url(../images/test-menu-bg.png) repeat-x bottom;}
+.user-tab .test-menu ul{display:block;height:50px;width:100%;}
+.user-tab .test-menu li{float: left;width: 120px;text-align: center;line-height:50px;cursor:pointer;color:#999;overflow: hidden;}
+.user-tab .test-menu ul{padding: 0px;list-style-type: none;}
+.user-tab .test-menu li.off{color:#06c; background:#fafafa;}
+.user-tab .menudiv{border-top:none;height: 500px;}
+.user-tab .menudiv div{padding:15px;line-height:28px;}
+
+
+
+
+/*弹出框代码*/
+
+.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000;opacity:0.8;filter:alpha(opacity=60)}
+.modal{position:fixed;top:50%;left:50%;z-index:1050;width:560px;margin:-250px 0 0 -280px;background-color:#ffffff;border:1px solid #999;border:1px solid rgba(0,0,0,0.3);*border:1px solid #999;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;outline:none;-webkit-box-shadow:0 3px 7px rgba(0,0,0,0.3);-moz-box-shadow:0 3px 7px rgba(0,0,0,0.3);box-shadow:0 3px 7px rgba(0,0,0,0.3);-webkit-background-clip:padding-box;-moz-background-clip:padding-box;background-clip:padding-box}
+#signup-modal,#login-modal,#forgetform,.modal{display:none;width:300px;padding:0 40px 20px;background:white;border:5px solid rgba(0,0,0,0.2);margin-left:-190px;border-radius:10px;overflow:hidden;margin-bottom:40px;box-shadow:0 1px 0 white inset;margin-top:-167px}
+#signup-modal a:hover,#login-modal a:hover,#forgetform a:hover,.modal a:hover{text-decoration:none}
+.modal h1,#forgetform h1,#signup-modal h1,#login-modal h1{margin:0 -40px;background:#EEE;border-bottom:1px solid #CCC;border-top:1px solid #CCC;font-size:16px;padding:13px 40px;border-top-left-radius:6px;border-top-right-radius:6px;text-align:center;margin-bottom:20px}
+.modal .close,#signup-modal .close,#login-modal .close,#forgetform .close{position:absolute;top:0;right:0;padding:12px 18px 16px 18px;height:16px;overflow:hidden;opacity:.8;border-left:1px solid #BBB; cursor:pointer;}
+
+.find-success{padding:15px 20px; overflow:hidden; position:relative; height:100px;}
+.forgot-btn,.login-btn{display:inline-block;*display:inline;*zoom:1;margin-top:14px;color:#ffffff}
+.find-success .success .icon{position: absolute;top:8px;left:40px;width:50px; height:50px; background:url(../images/icon-status.v9abc680f.png) no-repeat 0px -367px;}
+.find-success .success-text{padding:10px 0 0 95px; display:block;}
+.find-success .success-text .title{display:block; font-size: 18px;color: #333;}
+.find-success .success-text .login-btn{height:40px; padding:20px 0;}
+
+
+
+.footer{width:100%;height: 36px;line-height: 36px; text-align:center; font-size:12px; color:#999;}

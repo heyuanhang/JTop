@@ -1,0 +1,108 @@
+<div id="_____jtop__cms__advert_pos_____"></div>
+<script>
+
+
+if (typeof jQuery == 'undefined') 
+{ 
+  		var fileObj=null;
+	 	fileObj=document.createElement('script');
+        fileObj.src = "../common/js/jquery-1.7.min.js";
+       
+        fileObj.onload = fileObj.onreadystatechange = function() 
+        {
+        	//只有js加载完成后,才可以执行广告代码
+	    	if (!this.readyState || 'loaded' === this.readyState || 'complete' === this.readyState) 
+            {
+            	ajaxAdvert();
+            }
+         }
+         document.getElementsByTagName('head')[0].appendChild(fileObj);
+} 
+else 
+{ 
+	    ajaxAdvert();
+}
+
+function ajaxAdvert()
+{
+		var postData = 'a=12';
+ 		var url = "../../advert/showAdvert.cmd?"+postData+"&random="+Math.random();
+ 		
+ 		$.ajax
+ 		({
+			type:'POST',
+			url:url,
+			success:
+			function(data, textStatus)
+			{
+				$("#_____jtop__cms__advert_pos_____").append(data);
+				//alert(data);
+  			}
+  		});
+ 		//AJAXSend(url,"POST","");
+}
+
+
+function AJAXSend(url ,method ,data) 
+{ 
+	
+  if (window.XMLHttpRequest)
+  {    
+  	req = new XMLHttpRequest();   
+  	req.onreadystatechange = function()
+	{
+		if (req.readyState==4 && req.status==200)
+		{
+			//alert(req.responseText);
+			$("#_____jtop__cms__advert_pos_____").append(req.responseText);
+		}
+	}    
+  	req.open(method, url, true);  
+  	
+
+  	if("POST" == method )
+    {
+		req.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	}
+	else
+	{
+		req.setRequestHeader('Content-Type','whatever');
+	}
+ 	req.setRequestHeader('Content-Length',data.length);
+ 	req.setRequestHeader('Connection','close');
+
+ 	  
+  	req.send(data);  
+  } 
+  else if (window.ActiveXObject) 
+  {    
+ 	req = new ActiveXObject("Microsoft.XMLHTTP");    
+ 	if (req) 
+ 	{      
+ 		req.onreadystatechange = function()
+		{
+			if (req.readyState==4 && req.status==200)
+			{
+				$("#_____jtop__cms__advert_pos_____").append(req.responseText);
+			}
+		}     
+ 	 	req.open(method, url, true); 
+ 	 	    
+			
+ 	 	if("POST" == method )
+		{
+			req.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		}
+		else
+		{
+			req.setRequestHeader('Content-Type','whatever');
+		}
+ 	 	req.setRequestHeader('Content-Length',data.length);
+ 	 	req.setRequestHeader('Connection','close');
+ 	 	
+ 	 	req.send(data);     
+ 	}  
+  }
+ }
+</script>
+

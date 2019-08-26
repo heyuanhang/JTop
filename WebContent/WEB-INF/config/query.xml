@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<QuerySqlModule>
+    <!-- Pick start -->
+    
+	<query key="SELECT_PICK_RULE_LIST_QUERY">select * from pick_content_rule where siteId=?  order by pickCfgId desc</query>
+
+	<query key="SELECT_PICK_RULE_SINGLE_QUERY">select * from pick_content_rule where pickCfgId=?</query>
+
+
+	<query key="SELECT_PICK_TASK_SINGLE_QUERY">select * from pick_content_task where pickTaskId=?</query>
+
+
+	<query key="SELECT_ARTICLE_MODEL_CLASS_QUERY">
+		select * from contentclass cc inner join model m 
+			on cc.contentType=m.dataModelId 
+			where cc.siteFlag=? and m.modelResType=1
+	</query>
+
+	<query key="SELECT_PICK_TASK_LIST_QUERY">
+					select ptk.*, cc.className 
+						from pick_content_task ptk left join contentclass cc 
+							on ptk.classId=cc.classId 
+								where ptk.siteId=?
+	</query>
+
+	<query key="SELECT_META_INFO_QUERY">
+		select * from model_filed_metadata mfm, model_html_config mhc 
+					where 
+						mfm.dataModelId=? 
+						and mfm.metaDataId=mhc.metaDataId 
+						and mhc.htmlElementId in (1,7,8,9)
+	</query>
+
+
+	<query key="SELECT_SITE_DEF_TEMPLATE_SINGLE_QUERY">
+			select * from site_def_template_config where siteId=? and modelId=?
+	</query>
+	
+	 <!-- Pick end -->
+	 
+
+	 <!-- Member start -->
+	 
+	 
+	 <query key="SELECT_MEMBER_MG_TEMPLATE">
+	 	   select * from member_message_template where siteId=?
+	 </query>
+	 
+	 <query key="query_mg_template_param">
+	 	   select * from member_message_template_param where siteId=?
+	 </query>
+	 
+	 <query key="query_single_msg_template">
+	 	   select * from member_message_template where mtId=?
+	 </query>
+	 
+	 <query key="query_single_msg_template_param">
+	 	   select * from member_message_template_param where tpId=?
+	 </query>
+	 
+	 <query key="query_message">
+	 	   select * from member_message where memberId=? order by msgId desc
+	 </query>
+	 
+	  
+	 <!-- Member end -->
+
+</QuerySqlModule>

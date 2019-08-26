@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+ * GoogleMaps Plugin for FCKeditor
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * GMaps Properties dialog window.
+-->
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+		<title>Google Maps</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="noindex, nofollow" name="robots">
+<script type="text/javascript" src="../../../../fckeditor.js"></script>
+		<script src="googleMaps.js" type="text/javascript"></script>
+        <style type="text/css">
+			div.box {
+				height: 25px;
+			}
+			p {
+				margin:0;
+			}
+			div.black_overlay
+{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 10;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1001;
+	-moz-opacity: 0.6;
+	opacity: .60;
+	filter: alpha(opacity=60);
+}
+		</style>
+	</head>
+	<body>
+    <div id="fck_div" style="display :none; z-index:1002; position:absolute; left:10; top:0; background-color:White;">
+    <label fckLang="GMapsMarkerText"> Title</label><br />
+    
+    <script type="text/javascript">
+        var oFCKeditor = new FCKeditor("txtMarkerText");
+        FCKeditor.BasePath = "../../../../../fckeditor/";
+        oFCKeditor.Height = 300;
+        oFCKeditor.ToolbarSet = "Basic";
+        oFCKeditor.Create();
+         </script>
+<input type="button" id="btnDeleteMarker" onclick="DeleteCurrentMarkerfckdiv()" fckLang="GMapsDeleteMarker" />
+			<input type="button" id="btnOK2" onclick="Updatefckdiv()" fckLang="DlgBtnOK" />
+			<input type="button" id="btnCancel2" onclick="Closefckdiv()" fckLang="DlgBtnCancel" />
+    </div>
+    <div id="fckbg_div" class="black_overlay"></div> 
+		<div id="MapInfo" >
+			<table>
+				<tr>
+					<td>
+						<label for="txtWidth" fckLang="DlgImgWidth">宽度</label>
+						<input id="txtWidth" type="text" size="3">
+					</td>
+					<td>
+						<label for="txtHeight" fckLang="DlgImgHeight">高度</label>
+						<input id="txtHeight" type="text" size="3">
+					</td>
+					<td>
+<label for="txtCenterLatitude" fckLang="txtLatitude">纬度</label>
+						<input id="txtCenterLatitude" type="text" size="7">
+                        
+                        <label for="txtCenterLongitude" fckLang="txtLongitude">经度</label>
+						<input id="txtCenterLongitude" type="text" size="7">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	<div id="SearchInfo" style="display:none;" class="box">
+		<label for="searchDirection" fckLang="GMapsSearchLabel">搜索一个地点,请输入地名</label>
+		<input type="text" id="searchDirection" size="50" /> <input type="button" id="searchButton" value="搜索" fckLang="GMapsSearch" />
+	</div>
+
+	<div id="MarkerInfo" style="display:none;" class="box">
+		<img id="btnAddNewMarker" src="../images/AddMarker.png" style="cursor:pointer" />
+		<div id="instructions" style=" display:inline "></div>
+	</div>
+
+	<div id="LineInfo" style="display:none;" class="box">
+        <img id="btnAddNewLine" src="../images/AddLine.png" style="cursor:pointer" />
+        <img id="btnAddNewPoly" src="../images/AddPoly.png" style="cursor:pointer" />
+        <img id="btnDelPoly" src="../images/DelPoly.png" style="cursor:pointer" />
+        <div id="Polylinenote" style="display:inline ">
+        </div>
+	</div>
+
+
+<!--	<span fckLang="DlgImgPreview">Preview</span>-->
+	<div id="GMapPreview" style="width:600px; height:400px; outline:0;" tabIndex="-1"></div>							
+
+	</body>
+</html>

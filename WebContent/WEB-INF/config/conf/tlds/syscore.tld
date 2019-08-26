@@ -1,0 +1,6319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+	<description>JTopCMSTag</description>
+	<tlib-version>3.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>CMS_TAG</short-name>
+	<uri>/cms_tag</uri>
+	<small-icon></small-icon>
+
+	<!-- 内容模型模块 开始 -->
+
+	<tag>
+		<description>按照条件取对应内容的集合,注意,由系统使用的独立的标签,禁止用户使用</description>
+		<name>SystemManageContentList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemManageContentListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>模型名称</description>
+			<name>modelName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>模型ID</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>搜索关键字</description>
+			<name>key</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>搜索目标字段</description>
+			<name>field</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>搜索表单</description>
+			<name>form</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否筛选相关内容模式</description>
+			<name>relateSearch</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否使用分页模式</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每一页的数量</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>class ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>内容类型</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>取多少个数据的限制</description>
+			<name>limit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>筛选分类属性</description>
+			<name>filter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>发布属性</description>
+			<name>censorBy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>创建者</description>
+			<name>createBy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>排序</description>
+			<name>order</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>开始日期</description>
+			<name>startDate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>结束日期</description>
+			<name>endDate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<description>System:内容结果</description>
+		<name>SystemContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemManageContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+ 	
+		<attribute>
+			<description>是否表单模式</description>
+			<name>formMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>内容访问名称,嵌套标签时使用</description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Content ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>模型名称</description>
+			<name>modelName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>内容模型ID</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Info</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	 
+
+	<tag>
+		<description>Client:内容结果</description>
+		<name>Content</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>Content ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否表单模式</description>
+			<name>formMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>内容访问名称,嵌套标签时使用</description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>ID访问内容时,是否开启404页</description>
+			<name>use404</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		
+		
+		<attribute>
+			<description>模型名称</description>
+			<name>modelName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>模型ID</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否使用分页模式</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每一页的数量</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>class ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>需要排除获取内容的classId</description>
+			<name>exClassId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>内容所属机构代码</description>
+			<name>orgCode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否获取子机构代码</description>
+			<name>orgChild</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		 
+		
+		<attribute>
+			<description>当classID为多id混合取值模式时，需要指定分页模板主栏目</description>
+			<name>pageClassId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>类型标识</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>取多少个数据的限制</description>
+			<name>limit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>筛选分类属性</description>
+			<name>filter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>排序属性</description>
+			<name>order</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否显示所有字段</description>
+			<name>showAll</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>开始日期</description>
+			<name>startDate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>结束日期</description>
+			<name>endDate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>Info</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+	<tag>
+		<description>Client:内容状态(点击数,评论数,Digg,心情)</description>
+		<name>ContentStatus</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientContentStatusTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>Content ID</description>
+			<name>contentId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>InfoStatus</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		 
+	</tag>
+
+	<tag>
+		<description>Client:上一篇或下一篇内容结果</description>
+		<name>NextOrPrev</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientNextOrPrevContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>contentId</description>
+			<name>cid</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>获取标志:n 或 p</description>
+			<name>flag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>NPInfo</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+	</tag>
+
+
+
+	<tag>
+		<description>System:回收站内容</description>
+		<name>SysTrashContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemTrashContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>是否需要迭代状态</description>
+			<name>needstatus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Class ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Key</description>
+			<name>key</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>当前页</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Trash</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:个人工作面板信息列表</description>
+		<name>SPContentList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemPersonalWorkbenchContentListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>查询个人被退稿信息</description>
+			<name>personalReject</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>内容或留言模式</description>
+			<name>mode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>当前第几页</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>limit size</description>
+			<name>limit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<description>System:个人工作面板单个信息</description>
+		<name>SPContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemPersonalWorkbenchContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>是否需要迭代状态</description>
+			<name>needstatus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Content ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>模型名称</description>
+			<name>modelName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>内容模型ID</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>SPInfo</name-given>
+			<variable-class>
+				java.lang.Object
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:媒体引导截图信息</description>
+		<name>SMSIMAGE</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemMediaSnapshotImageTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>是否需要迭代状态</description>
+			<name>needstatus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>Content ID</description>
+			<name>contentId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>SPSSIMG</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:图片集</description>
+		<name>PhotoGroup</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientPhotoGroupTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>所属内容ID</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>图片组信息元类型</description>
+			<name>modelType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>图片组标识</description>
+			<name>group</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>CMS服务器URL模式</description>
+			<name>serverMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Photo</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:新闻单内容分页列表</description>
+		<name>ContentPageList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientContentPageListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+	</tag>
+
+
+	<tag>
+		<description>Client:新闻单内容分页</description>
+		<name>ContentPage</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientContentPageTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<variable>
+			<name-given>CPage</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.content.bean.ContentAssistantPageInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:内容辅助处理信息</description>
+		<name>SystemAssiInfo</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemAssistantInfo
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>内容ID</description>
+			<name>contentId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>模式</description>
+			<name>mode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>AssiInfo</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:推荐内容信息</description>
+		<name>CommendContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientCommendContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>推荐位flag</description>
+			<name>flag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>推荐位typeid</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>推荐位信息Id</description>
+			<name>infoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页模式</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>当前第几页</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>CommInfo</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:推荐内容信息</description>
+		<name>SysCommendContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemCommendContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>推荐位flag</description>
+			<name>flag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>推荐位ID</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>推荐位信息Id</description>
+			<name>infoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>CommInfo</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:推荐内容行信息</description>
+		<name>CommendRow</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientCommendRowTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>推荐位flag</description>
+			<name>commFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>行flag</description>
+			<name>rowFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>RowInfo</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:推荐内容行信息</description>
+		<name>SysCommendRow</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemCommendRowTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>推荐位flag</description>
+			<name>commFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>行flag</description>
+			<name>rowFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>RowInfo</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>富文本编辑器配置组件模版</description>
+		<name>SystemEditorModuleTemplate</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemEditorModuleTemplateTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>控件类型</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>Client:多分类查询内容标签</description>
+		<name>MutiContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientContentMutiQueryTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>分类ID,格式为 类型:ID  类型可以是栏目分类ID 留言分类ID等</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>站点Id</description>
+			<name>siteId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否表单模式</description>
+			<name>formMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>表单模型ID</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>查询条件</description>
+			<name>query</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>排序条件</description>
+			<name>order</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>顺序</description>
+			<name>way</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否分页</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>获取数据数量</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>MInfo</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:标签内容查询</description>
+		<name>TagContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientTagContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>标签Id</description>
+			<name>tagId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>标签名称</description>
+			<name>tagName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>排序</description>
+			<name>order</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否分页</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>获取数据数量</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>TInfo</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:相关内容获取(内容,调查)</description>
+		<name>Relate</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.ClientRelateTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>关联类型:c-内容,s-调查</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>获取数据数量</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>ReId</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<!-- 内容模块 结束 -->
+
+	<!-- 评论模块 开始 -->
+	<tag>
+		<description>System:内容评论信息</description>
+		<name>SystemComment</name>
+		<tag-class>
+			cn.com.mjsoft.cms.comment.html.SystemContentCommentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>所评内容ID</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>栏目ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>评论ID</description>
+			<name>commentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>状态</description>
+			<name>censor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>评论人名称</description>
+			<name>userName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>评论互评模式</description>
+			<name>replyMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>分页数</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>获取数据数量</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>Comment</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.comment.bean.CommentInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:评论信息</description>
+		<name>Comment</name>
+		<tag-class>
+			cn.com.mjsoft.cms.comment.html.ClientContentCommentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>所评内容ID</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>评论ID</description>
+			<name>commentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>类型ID</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>评论人名称</description>
+			<name>userName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>分页数</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否分页</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>获取数据数量</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>Comment</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.comment.bean.CommentInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:评论回复列表</description>
+		<name>CommentReply</name>
+		<tag-class>
+			cn.com.mjsoft.cms.comment.html.ClientCommentAllReplyTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>评论ID集合</description>
+			<name>ids</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>父评论ID</description>
+			<name>replyId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Reply</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.comment.bean.CommentInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+	<!-- 评论模块 结束 -->
+
+
+
+	<!-- 留言板模块 开始 -->
+	<tag>
+		<description>System:留言板配置项</description>
+		<name>SystemGbConfig</name>
+		<tag-class>
+			cn.com.mjsoft.cms.guestbook.html.SystemGuestbookConfigTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>是否需要迭代状态</description>
+			<name>needstatus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>配置ID</description>
+			<name>configId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>GbCfg</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.guestbook.bean.GuestbookConfigBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:留言板配置项</description>
+		<name>GbConfig</name>
+		<tag-class>
+			cn.com.mjsoft.cms.guestbook.html.ClientGuestbookConfigTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		 
+
+		<attribute>
+			<description>配置ID</description>
+			<name>configId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>GbCfg</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.guestbook.bean.GuestbookConfigBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:留言信息</description>
+		<name>SystemGbInfo</name>
+		<tag-class>
+			cn.com.mjsoft.cms.guestbook.html.SystemGuestbookTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>配置编码</description>
+			<name>configFlag</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>留言信息ID</description>
+			<name>gbId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否回复</description>
+			<name>isReply</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否审核</description>
+			<name>isCensor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否公开</description>
+			<name>isOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页留言数</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>GbInfo</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+	<tag>
+		<description>Client:留言信息</description>
+		<name>GbInfo</name>
+		<tag-class>
+			cn.com.mjsoft.cms.guestbook.html.ClientGuestbookTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>配置编码</description>
+			<name>configFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>留言信息ID</description>
+			<name>gbId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否回复</description>
+			<name>isReply</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否审核</description>
+			<name>isCensor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否公开</description>
+			<name>isOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页模式</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页留言数</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>GbInfo</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+
+
+	<!-- 留言板模块 结束 -->
+
+	<!-- 广告模块开始 -->
+	<tag>
+		<description>System:广告配置项</description>
+		<name>SystemAdvertConfig</name>
+		<tag-class>
+			cn.com.mjsoft.cms.advert.html.SystemAdvertConfigTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>配置ID</description>
+			<name>configId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>版位ID</description>
+			<name>posId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Config</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.advert.bean.AdvertConfigBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:广告版位</description>
+		<name>SystemAdvertPos</name>
+		<tag-class>
+			cn.com.mjsoft.cms.advert.html.SystemAdvertPosTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>版位ID</description>
+			<name>posId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Pos</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:广告内容</description>
+		<name>SystemAdvertContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.advert.html.SystemAdvertContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>版位ID</description>
+			<name>posId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>广告ID</description>
+			<name>advertId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Advert</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:广告配置参数</description>
+		<name>SystemAdvertConfigParam</name>
+		<tag-class>
+			cn.com.mjsoft.cms.advert.html.SystemAdvertConfigParamTagNOTUSE
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>配置ID</description>
+			<name>configId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>参数类型</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否编辑模式</description>
+			<name>isEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Param</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.advert.bean.AdvertConfigParamBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:广告投放</description>
+		<name>Advert</name>
+		<tag-class>
+			cn.com.mjsoft.cms.advert.html.ClientAdvertTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>版位标志</description>
+			<name>posFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>广告标志</description>
+			<name>adFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Advert</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.advert.bean.AdvertContentBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+	<!-- 广告模块结束 -->
+
+
+
+	<!-- 调查问卷模块开始 -->
+	<tag>
+		<description>System:调查问卷组信息</description>
+		<name>SystemSurverGroup</name>
+		<tag-class>
+			cn.com.mjsoft.cms.questionnaire.html.SystemSurveyGroupTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>所属分类ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>调查信息ID</description>
+			<name>groupId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>获取数据数</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Group</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.questionnaire.bean.SurveyGroupBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:调查问卷组信息</description>
+		<name>SurveyGroup</name>
+		<tag-class>
+			cn.com.mjsoft.cms.questionnaire.html.ClientSurveyGroupTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>所属分类ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>调查信息ID</description>
+			<name>groupId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>是否分页</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>获取数据数</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Group</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.questionnaire.bean.SurveyGroupBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>SystemAndClient:调查问卷基础信息</description>
+		<name>Survey</name>
+		<tag-class>
+			cn.com.mjsoft.cms.questionnaire.html.SurveyTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>所属调查组ID</description>
+			<name>groupId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>所属调查组flag</description>
+			<name>groupFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>调查内容ID</description>
+			<name>surveyId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Survey</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.questionnaire.bean.SurveyBaseInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>SystemAndClient:调查项信息</description>
+		<name>SurveyOption</name>
+		<tag-class>
+			cn.com.mjsoft.cms.questionnaire.html.SurveyOptionTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<variable>
+			<name-given>Option</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.questionnaire.bean.SurveyOptionInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>SystemAndClient:文本调查项信息</description>
+		<name>SurveyOptText</name>
+		<tag-class>
+			cn.com.mjsoft.cms.questionnaire.html.SurveyTextTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>是否分页</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>数据大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>OptText</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+
+	<!-- 调查问卷模块结束 -->
+
+
+
+
+	<!-- 栏目与站点模块 开始 -->
+
+	<tag>
+		<description>System: 显示栏目树为HTML形式</description>
+		<name>DisplayClass</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.SystemDisplayClassTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>内容模型ID,只取当前模型对应的栏目</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>内容ID,取对应的栏目</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>初始化ID,将选中某option</description>
+			<name>initClassId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+
+	<tag>
+		<description>Client:栏目列表(已废弃)</description>
+		<name>ClassList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.ClientContentClassListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>父栏目ID</description>
+			<name>parentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>对于传入如11,22,33这样格式的多个id,将取去对应的栏目信息</description>
+			<name>idList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>
+				对于传入如aa,bb,cc这样格式的多个flag,将取去对应的栏目信息
+			</description>
+			<name>flags</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否专题类型</description>
+			<name>isSpec</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>节点类型</description>
+			<name>classType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>class name</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>layer</description>
+			<name>layer</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>show type</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Site Node</description>
+			<name>site</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>如果值为true,只取可以显示的栏目</description>
+			<name>showMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System: 栏目专题列表</description>
+		<name>SystemClassList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.SystemContentClassListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>父栏目ID</description>
+			<name>parentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>对于传入如11,22,33这样格式的多个id,将取去对应的栏目信息</description>
+			<name>idList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>
+				对于传入如aa,bb,cc这样格式的多个flag,将取去对应的栏目信息
+			</description>
+			<name>flags</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否专题类型</description>
+			<name>isSpec</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>节点类型</description>
+			<name>classType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>站点首个栏目模式</description>
+			<name>firstClassMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>栏目名称查询关注字</description>
+			<name>key</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>class name</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>layer</description>
+			<name>layer</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>show type</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Site Node</description>
+			<name>site</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>如果值为true,只取可以显示的栏目</description>
+			<name>showMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页数</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System: 当前系统服务器信息</description>
+		<name>CmsServer</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.SystemCmsServerInfoTag
+		</tag-class>
+		<body-content>jsp</body-content>
+		<variable>
+			<name-given>Cms</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.site.bean.CmsServerBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+	</tag>
+
+	<tag>
+		<description>System: 当前系统服务器域名</description>
+		<name>Domain</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.SystemCmsServerDomainTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+	</tag>
+
+	<tag>
+		<description>SystemAndClient: 站点信息</description>
+		<name>Site</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.SystemSiteGroupTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>site id</description>
+			<name>siteId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>site flag</description>
+			<name>siteFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Site</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.site.bean.SiteGroupBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+	</tag>
+
+	<tag>
+		<description>Client: 站点资源Base目录(已废弃)</description>
+		<name>ResBase</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.ClientSiteResTag
+		</tag-class>
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>Client: 站点资源Base目录(已废弃)</description>
+		<name>SiteBase</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.ClientSiteBaseTag
+		</tag-class>
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>System: 远程同步服务器</description>
+		<name>DispenseServer</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.SystemDispenseServerTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>服务器唯一ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>Server</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.site.bean.SiteDispenseServerBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System: 发布点</description>
+		<name>SystemGateway</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.SystemPublishGatewayTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>发布点唯一ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Gateway</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.site.bean.SitePublishGatewayBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System: 站点下文件内容信息列表</description>
+		<name>SiteFileInfoList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.SystemSiteFileInfoTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>目标进入子目录</description>
+			<name>entry</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>目录模式</description>
+			<name>folderMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>SiteFile</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.site.bean.SiteFileInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+	<tag>
+		<description>Client: Home page link</description>
+		<name>HomePageLink</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.ClientHomePageLinkTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>site id</description>
+			<name>siteId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<description>Client:获取栏目或专题</description>
+		<name>Class</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.ClientClassTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>class ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>栏目对象引用名,嵌套使用标签时需不同名称</description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否为标志获取数据模式</description>
+			<name>flagMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>测试是否存在,若不存在跳转404</description>
+			<name>test</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>专题模式</description>
+			<name>specMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>取推荐专题</description>
+			<name>specComm</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>id集合</description>
+			<name>idList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>筛选模型</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>排序:down或up</description>
+			<name>order</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Class</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentClassBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System: 获取栏目</description>
+		<name>SysClass</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.SystemClassTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<variable>
+			<name-given>Class</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentClassBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<attribute>
+			<description>class ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>class flag</description>
+			<name>flag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+	<tag>
+		<description>Client:栏目路径</description>
+		<name>ChannelPath</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.ClientChannelPathTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<variable>
+			<name-given>Class</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentClassBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<attribute>
+			<description>class ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:推荐类型列表</description>
+		<name>SystemCommendType</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.SystemCommendTypeTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>推荐位id</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>推荐位所属栏目</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否获取当前栏目全部可见推荐位</description>
+			<name>showAll</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否属于专题</description>
+			<name>isSpec</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>CommendType</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentCommendTypeBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:推荐类型列表</description>
+		<name>CommendType</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.ClientCommendTypeTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>推荐位id</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>推荐位所属栏目</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否获取当前栏目全部可见推荐位</description>
+			<name>showAll</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否属于专题</description>
+			<name>isSpec</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>CommendType</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentCommendTypeBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>推荐位栏目信息</description>
+		<name>SystemCommendClass</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.SystemCommendClassTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>推荐位id</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>CommClass</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentClassBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+	<tag>
+		<description>Client:Tag词获取</description>
+		<name>TagWord</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.ClientTagWordTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>Tag ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分类ID</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分类Flag</description>
+			<name>typeFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Tag首拼音字母</description>
+			<name>fc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Tag内容排序</description>
+			<name>order</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页当前页</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否分页</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>获取数据大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>Tag</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+	<tag>
+		<description>内容类型分类列表</description>
+		<name>SystemContentTypeList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.SystemContentTypeListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+
+		<attribute>
+			<description>唯一ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>ContentType</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentTypeBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:栏目访问白名单</description>
+		<name>ChannelWhiteView</name>
+		<tag-class>
+			cn.com.mjsoft.cms.channel.html.ChannelWhiteIpViewTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>栏目ID</description>
+			<name>classId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>跳转提示页</description>
+			<name>jump</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+	</tag>
+
+	<tag>
+		<description>Client:跳转移动端适配站点</description>
+		<name>MobiSite</name>
+		<tag-class>
+			cn.com.mjsoft.cms.site.html.ClientJumpMobiSiteJsTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+	</tag>
+
+
+
+	<!-- 栏目与站点模块 结束-->
+
+
+
+
+	<!-- 区块模块 开始 -->
+	<tag>
+		<description>System:区块信息</description>
+		<name>SystemBlockInfo</name>
+		<tag-class>
+			cn.com.mjsoft.cms.block.html.SystemBlockInfoTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>分类ID</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>区块ID</description>
+			<name>blockId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>TreeItem</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.block.bean.BlockTreeInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:页面区块</description>
+		<name>Block</name>
+		<tag-class>
+			cn.com.mjsoft.cms.block.html.ClientBlockTag
+		</tag-class>
+
+		<attribute>
+			<description>区块获取标志</description>
+			<name>flag</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+
+	<tag>
+		<description>System:区块分类</description>
+		<name>SystemBlockType</name>
+		<tag-class>
+			cn.com.mjsoft.cms.block.html.SystemBlockTypeTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>区块分类ID</description>
+			<name>typeId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+
+		<variable>
+			<name-given>BlockType</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.block.bean.BlockTypeBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+	<!-- 区块模块 结束 -->
+
+
+
+
+	<!-- 发布与采集模块 开始 -->
+	<tag>
+		<description>获取发布规则列表</description>
+		<name>SystemPublishRuleList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.publish.html.SystemPublishRuleListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>type</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否本站</description>
+			<name>currSite</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>单一发布规则获取</description>
+		<name>SystemPublishRule</name>
+		<tag-class>
+			cn.com.mjsoft.cms.publish.html.SystemPublishRuleTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>内容模型ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Rule</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.publish.bean.PublishRuleBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+
+	<!-- 发布与采集模块 结束 -->
+
+
+
+
+
+	<!-- 模板模块 -->
+	<tag>
+		<description>Client: 获取指定的模板路径(已废弃)</description>
+		<name>TempletLink</name>
+		<tag-class>
+			cn.com.mjsoft.cms.templet.html.ClientTempletLinkTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>templet ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>站点名</description>
+			<name>site</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System: display class templet</description>
+		<name>DisplayClassTemplet</name>
+		<tag-class>
+			cn.com.mjsoft.cms.templet.html.SystemDisplayClassTempletTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>templet type</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>site name</description>
+			<name>site</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System: templet file info</description>
+		<name>TempletFile</name>
+		<tag-class>
+			cn.com.mjsoft.cms.templet.html.SystemTempletFileInfoTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>entry path</description>
+			<name>entry</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>只显示目录</description>
+			<name>folderMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>TempletFile</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.templet.bean.FileInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+
+
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System: templet single file content</description>
+		<name>TempletContent</name>
+		<tag-class>
+			cn.com.mjsoft.cms.templet.html.SystemSingleTempletContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>entry path</description>
+			<name>entry</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>show mode</description>
+			<name>show</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>template</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.templet.bean.TemplateContentBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:页面包含</description>
+		<name>Include</name>
+		<tag-class>
+			cn.com.mjsoft.cms.templet.html.ClientTemplateIncludeTag
+		</tag-class>
+
+		<attribute>
+			<description>包含页面URL</description>
+			<name>page</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<body-content>jsp</body-content>
+	</tag>
+
+
+
+
+	<!-- 模板模块 结束-->
+
+
+
+
+	<!-- 安全权限模块 开始-->
+
+
+	<tag>
+		<description>System:管理员登陆状态</description>
+		<name>ManagerSec</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemManagerLoginCheckTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>跳转页面模式</description>
+			<name>jump</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+
+
+	<tag>
+		<description>Client: 显示当前登陆用户</description>
+		<name>LoginMember</name>
+		<tag-class>
+			cn.com.mjsoft.cms.member.html.MemberLoginTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+	</tag>
+
+	<tag>
+		<description>Client: 登录会员浏览权限</description>
+		<name>MemberAcc</name>
+		<tag-class>
+			cn.com.mjsoft.cms.member.html.MemberAccViewTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>栏目ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>无权限跳转页</description>
+			<name>jump</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+	</tag>
+
+
+
+	<tag>
+		<description>Client: 显示当前登陆管理员</description>
+		<name>LoginUser</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.ClientLoginManagerTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+	</tag>
+
+	<tag>
+		<description>Client: 获取当前登陆用户所在站点信息</description>
+		<name>CurrentSite</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.ClientLoginUserCurrentSiteTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<variable>
+			<name-given>CurrSite</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.site.bean.SiteGroupBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System: 显示权限资源树</description>
+		<name>DisplaySecurityResource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemDisplaySecurityResTag
+		</tag-class>
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>System: 显示会员权限资源树</description>
+		<name>DisplayMemberSecurityResource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemMemberDisplaySecurityResTag
+		</tag-class>
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>System:获取系统细粒度权限资源信息，系统控制使用，不涉及权限</description>
+		<name>AccInfoList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemAccInfoListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>角色唯一ID</description>
+			<name>roleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源ID</description>
+			<name>resId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源系统Flag</description>
+			<name>sysFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>机构ID</description>
+			<name>orgId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>站点ID</description>
+			<name>siteId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>细粒度保护类型</description>
+			<name>secType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>栏目分类类型</description>
+			<name>classMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>资源类型</description>
+			<name>accType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System:单一细粒度权限资源，系统控制使用，不涉及权限</description>
+		<name>AccInfo</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemAccInfoTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>是否需要迭代状态</description>
+			<name>needstatus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Acc</name-given>
+			<variable-class>java.util.Map</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:获取系统权限资源，系统控制使用，不涉及权限</description>
+		<name>ResourceList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemSecurityResourceListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>用户唯一ID</description>
+			<name>userId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>角色ID</description>
+			<name>roleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>组织ID</description>
+			<name>orgId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>获取顶级资源和模块</description>
+			<name>mainMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>按linear获取</description>
+			<name>linear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>按linear父节点模式获取</description>
+			<name>parentLinearMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>数据保护类型</description>
+			<name>protectType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+
+	<tag>
+		<description>System:获取会员权限资源，系统控制使用，不涉及权限</description>
+		<name>MemberResourceList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemMemberResourceListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>用户唯一ID</description>
+			<name>userId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>角色ID</description>
+			<name>roleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>获取顶级资源和模块</description>
+			<name>mainMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>按linear获取</description>
+			<name>linear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>按linear父节点模式获取</description>
+			<name>parentLinearMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>数据保护类型</description>
+			<name>protectType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<description>System:单一系统权限资源，系统控制使用，不涉及权限</description>
+		<name>Resource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemSecurityResourceTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>资源ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源linear</description>
+			<name>linear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Res</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.security.bean.SecurityResourceBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:单一会员权限资源，系统控制使用，不涉及权限</description>
+		<name>MemberResource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemMemberSecurityResourceTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>资源ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源linear</description>
+			<name>linear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Res</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.security.bean.MemberSecurityResourceBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:获取系统权级别角色</description>
+		<name>SystemRoleList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemRoleListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>用户ID</description>
+			<name>userId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>管理模式</description>
+			<name>manage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页标志</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页数目</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>机构ID</description>
+			<name>orgId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System:单一系统权级别角色</description>
+		<name>SystemRole</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemRoleTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>角色ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Role</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.security.bean.SystemRoleBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>SystemAndClient:会员组角色</description>
+		<name>MemberRole</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.MemberRoleTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>角色ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>会员ID</description>
+			<name>userId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Role</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.security.bean.MemberRoleBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+
+	<tag>
+		<description>System:获取多个系统权限资源，权限控制使用</description>
+		<name>SecurityResourceList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.ClientSecurityResourceListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>父资源ID,主入口标志为-1</description>
+			<name>parentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源类型</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<description>System:单一系统权限资源，权限控制使用</description>
+		<name>SecurityResource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.ClientSecurityResourceTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>资源ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Resource</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.security.bean.SecurityResourceBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+	
+	
+	
+	<tag>
+		<description>SystemAndClient:获取多个会员权限资源，权限控制使用</description>
+		<name>MemberSecurityResourceList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.ClientMemberSecurityResourceListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>父资源ID,主入口标志为-1</description>
+			<name>parentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源类型</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+	
+	
+	<tag>
+		<description>SystemAndClient:单一会员权限资源，权限控制使用</description>
+		<name>MemberSecurityResource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.ClientMemberSecurityResourceTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>资源ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>MemResource</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.security.bean.MemberSecurityResourceBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+	
+	
+	
+	
+
+	<tag>
+		<description>System:获取多个系统注册用户信息</description>
+		<name>SystemUserList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemUserListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>角色ID</description>
+			<name>roleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Org代码</description>
+			<name>orgCode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>取所有用户</description>
+			<name>allMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>管理员模式</description>
+			<name>manage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>查询名称</description>
+			<name>queryName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>第几页</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页数</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>不包含此角色ID已拥有的user</description>
+			<name>excludeUserRoleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System:单一系统注册用户信息</description>
+		<name>SystemUser</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemUserTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>用户ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>用户名称</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>SysUser</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.security.bean.SystemUserBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+
+	<tag>
+		<description>SystemAndClient:会员用户信息</description>
+		<name>Member</name>
+		<tag-class>cn.com.mjsoft.cms.member.html.MemberTag</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>用户ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>获取单个会员的附加交互信息(cmt:msg:gb:info:)</description>
+			<name>actInfo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>取已登录会员完整信息</description>
+			<name>loginMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>当logonMode为true，若无会员登录，则跳到指定页</description>
+			<name>jumpPage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>会员组角色ID</description>
+			<name>roleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否是分页模式</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>每页数</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Member</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:机构部门</description>
+		<name>SystemOrg</name>
+		<tag-class>
+			cn.com.mjsoft.cms.organization.html.OrganizationTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>ID</description>
+			<name>orgId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>机构唯一代码</description>
+			<name>orgCode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>父ID</description>
+			<name>parentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>取所有下级组织模式</description>
+			<name>childMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Org</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.organization.bean.SystemOrganizationBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:细粒度权限栏目获取</description>
+		<name>SystemOrgClass</name>
+		<tag-class>
+			cn.com.mjsoft.cms.organization.html.SystemOrgClassTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>ID</description>
+			<name>orgId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>站点ID</description>
+			<name>siteId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>acc类型</description>
+			<name>secType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>专题类型</description>
+			<name>specMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Class</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentClassBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:细粒度权限推荐位类型获取</description>
+		<name>SystemOrgCommend</name>
+		<tag-class>
+			cn.com.mjsoft.cms.organization.html.SystemOrgCommendTypeTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>ID</description>
+			<name>orgId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>站点ID</description>
+			<name>siteId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>acc类型</description>
+			<name>secType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>CommendType</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.channel.bean.ContentCommendTypeBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+	
+	<tag>
+		<description>System:细粒度权限推荐位类型获取</description>
+		<name>SystemOrgGbCfg</name>
+		<tag-class>
+			cn.com.mjsoft.cms.organization.html.SystemOrgGuestbookTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>ID</description>
+			<name>orgId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>站点ID</description>
+			<name>siteId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>acc类型</description>
+			<name>secType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>GbCfg</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.guestbook.bean.GuestbookConfigBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:粗粒度权限站点获取</description>
+		<name>SystemOrgSite</name>
+		<tag-class>
+			cn.com.mjsoft.cms.organization.html.SystemOrgSiteTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>orgID</description>
+			<name>orgId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>角色模式</description>
+			<name>roleMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>roleID</description>
+			<name>roleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>OrgSite</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.site.bean.SiteGroupBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:判断页面元素是否允许被显示或生效</description>
+		<name>SystemUiRole</name>
+		<tag-class>
+			cn.com.mjsoft.cms.security.html.SystemButtonSecRoleTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>资源标志</description>
+			<name>flag</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>accId</description>
+			<name>accId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+
+	<!-- 安全权限模块 结束-->
+
+
+
+
+	<!-- 自定义内容模型模块 开始-->
+	<tag>
+		<description>System:获取内容模型</description>
+		<name>SystemDataModelList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.SystemDataModelListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>获取模式</description>
+			<name>mode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>可见模式</description>
+			<name>showMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>站点ID</description>
+			<name>siteId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>模型类型</description>
+			<name>modelType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System:单一内容模型</description>
+		<name>SystemDataModel</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.SystemDataModelTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>内容模型ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>DataModel</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.metadata.bean.DataModelBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:获取内容模型</description>
+		<name>Model</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.ClientModelTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>只获取站点的模型</description>
+			<name>siteMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>指定一个站点ID</description>
+			<name>siteId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>数据模型ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Model</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.metadata.bean.DataModelBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+
+	</tag>
+	
+	<tag>
+		<description>Client:获取模型字段</description>
+		<name>ModelField</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.ClientModelFiledTag
+		</tag-class>
+		<body-content>jsp</body-content>
+		
+		<attribute>
+			<description>数据模型ID</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>字段标识</description>
+			<name>fieldSign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Field</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.metadata.bean.ModelFiledInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+
+	</tag>
+
+
+	<tag>
+		<description>System:获取内容模型字段</description>
+		<name>SystemModelFiledList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.SystemModelFiledListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>内容模型ID</description>
+			<name>modelId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否show模式</description>
+			<name>showMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System:单一内容模型字段</description>
+		<name>SystemModelFiled</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.SystemModelFiledTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>字段ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>ModelFiled</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:显示模式的单一内容模型字段</description>
+		<name>SystemModelRowFiled</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.SystemModelFiledRowTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<variable>
+			<name-given>RowFiled</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:模型字段默认验证配置</description>
+		<name>FieldValidateConfig</name>
+		<tag-class>
+			cn.com.mjsoft.cms.metadata.html.ClientModelValidateConfigTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>fieldId</description>
+			<name>fieldId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>Valid</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.metadata.bean.ModelValidateConfigBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<!--<tag>
+		<description>获取自定义模型模板</description>
+		<name>SystemModelTemplet</name>
+		<tag-class>cn.com.mjsoft.cms.metadata.html.SystemModelTempletTag</tag-class>
+		<body-content>jsp</body-content>
+		
+		<attribute>
+		<description>模型访问标识</description>
+		<name>modelSign</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+		<description>模板类型</description>
+		<name>type</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		</tag>
+		
+	--><!-- 自定义内容模型模块 结束-->
+
+
+	<!-- 资源管理模块 开始-->
+
+
+
+	<tag>
+		<description>System:获取缩放的图片资源地址</description>
+		<name>SystemResizeImgUrl</name>
+		<tag-class>
+			cn.com.mjsoft.cms.resources.html.SystemImageResizeUrlTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>图片资源相对地址</description>
+			<name>reUrl</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<description>System:站点资源库文件</description>
+		<name>SystemSiteResource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.resources.html.SystemSiteResourcesTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>分页标志</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页数量</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>栏目ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否取子了栏目资源</description>
+			<name>classChildMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+
+		<attribute>
+			<description>资源分类</description>
+			<name>resType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源Id</description>
+			<name>resId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>资源唯一路径</description>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Res</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.resources.bean.SiteResourceBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+	<tag>
+		<description>System:文件资源列表</description>
+		<name>SystemFileResource</name>
+		<tag-class>
+			cn.com.mjsoft.cms.resources.html.SystemFileResourceTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>目录入口</description>
+			<name>entry</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>模板模式</description>
+			<name>templateMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>分页标志</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页数量</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>File</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.resources.bean.FileInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>System:文本文件内容</description>
+		<name>SystemSingleTextFile</name>
+		<tag-class>
+			cn.com.mjsoft.cms.resources.html.SystemSingleTextFileContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>目录入口</description>
+			<name>entry</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>Text</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.resources.bean.TextBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+	</tag>
+
+
+
+
+
+	<!-- 资源管理模块 结束-->
+
+	<!-- 工作流开始 -->
+	<tag>
+		<description>System:获取工作流集合</description>
+		<name>SystemWorkflowList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemWorkflowList
+		</tag-class>
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>单一工作流信息</description>
+		<name>SystemWorkflow</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemWorkflow
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>工作流ID</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:工作流内容参与者权限检查</description>
+		<name>SystemCheckFlowUser</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemCheckFlowRestrictedUserTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>内容ID</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>System:获取工作流集合</description>
+		<name>SystemWorkflowList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemWorkflowList
+		</tag-class>
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>System:工作流步骤动作信息</description>
+		<name>SystemFlowStepAction</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemFlowStepActionTag
+		</tag-class>
+
+		<attribute>
+			<description>内容ID</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>工作流ID</description>
+			<name>flowId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>当前步骤</description>
+			<name>step</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>System:工作流步骤信息</description>
+		<name>SystemWorkflowStep</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemWorkflowStepTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>工作流ID</description>
+			<name>flowId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>工作流单一步骤编号</description>
+			<name>step</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否显示系统业务开始步骤ID</description>
+			<name>startMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Step</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.workflow.bean.WorkflowStepInfoBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:工作流步骤参与审核者信息</description>
+		<name>SystemWorkflowStepActor</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemWorkflowStepActorTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>工作流ID</description>
+			<name>flowId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>步骤ID</description>
+			<name>stepId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>参与者类型</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Actor</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.workflow.bean.WorkflowActorBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:工作流动作信息</description>
+		<name>SystemWorkflowAction</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.SystemWorkflowStepActionTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>工作流ID</description>
+			<name>flowId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>动作ID</description>
+			<name>actId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>Action</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.workflow.bean.WorkflowStepActionBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:工作流交互按钮动作UI辅助</description>
+		<name>WorkflowActionUIHelp</name>
+		<tag-class>
+			cn.com.mjsoft.cms.workflow.html.ClientWorkflowActionUiHelpTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>栏目ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>内容ID</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否重新编辑状态</description>
+			<name>edit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Action</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.workflow.bean.WorkflowStepActionBean
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+	<!-- 工作流结束 -->
+
+
+	<!-- 站内全文搜索开始 -->
+
+	<tag>
+		<description>Client:搜索站内信息</description>
+		<name>SearchEntry</name>
+		<tag-class>
+			cn.com.mjsoft.cms.search.html.ClientSearchContentListTag
+		</tag-class>
+		<body-content>jsp</body-content>
+		
+		<attribute>
+			<description>搜索的关键词</description>
+			<name>key</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>页码</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>每页结果数量</description>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>高亮显示</description>
+			<name>light</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<attribute>
+			<description>高亮开始标签</description>
+			<name>lsTag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>高亮结束标签</description>
+			<name>leTag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>主显字段名称</description>
+			<name>showField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>主显字段最大字数</description>
+			<name>contentLength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>指定搜索目标字段,多值以,分割</description>
+			<name>field</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>指定模型,多值以,分割</description>
+			<name>modelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>指定搜索栏目,多值以,分割</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>指定开始时间范围</description>
+			<name>dateStart</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>指定开始时间范围</description>
+			<name>dateEnd</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>按时间排序，ad-down降序，ad-up升序</description>
+			<name>dateOrder</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>搜索参数编码</description>
+			<name>enc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+
+
+	<tag>
+		<description>Client:搜索结果</description>
+		<name>SearchResult</name>
+		<tag-class>
+			cn.com.mjsoft.cms.search.html.ClientSearchContentTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<variable>
+			<name-given>Hit</name-given>
+			<variable-class>java.util.HashMap</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>Client:站点搜索词排列</description>
+		<name>SearchKey</name>
+		<tag-class>
+			cn.com.mjsoft.cms.search.html.ClientSearchKeyTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>显示数量</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Key</name-given>
+			<variable-class>java.util.HashMap</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<!-- 站内全文搜索结束 -->
+
+
+
+
+
+	<!-- 站点交互标签 开始 -->
+	<tag>
+		<description>Client:站点公告</description>
+		<name>Announce</name>
+		<tag-class>
+			cn.com.mjsoft.cms.interflow.html.ClientSiteAnnounceTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>获取数量</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否使用分页模式</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Ann</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>Client:友情链接</description>
+		<name>FriendLink</name>
+		<tag-class>
+			cn.com.mjsoft.cms.interflow.html.ClientSiteFriendLinkTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>类型Flag</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Friend</name-given>
+			<variable-class>java.lang.Object</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+
+	<!-- 站点交互标签 结束 -->
+
+
+
+
+
+
+
+	<!-- 共用标签 开始 -->
+
+	<tag>
+		<description>System:CMS系统主Path</description>
+		<name>BasePath</name>
+		<tag-class>cn.com.mjsoft.cms.common.html.BasePathTag</tag-class>
+		<body-content>jsp</body-content>
+	</tag>
+
+
+	<tag>
+		<description>SystemAndClient:数据迭代和方法执行标签</description>
+		<name>QueryData</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemIteratorTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+
+		<attribute>
+			<description>当前查询是否为list模式</description>
+			<name>list</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>当前查询结果是否共享</description>
+			<name>common</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>其他数据Obj名称</description>
+			<name>reObj</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>获取内容查询</description>
+			<name>querySign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>总数据量查询</description>
+			<name>countSign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>参数,格式为1,2,3,{page},{size}(后为分页参数)</description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>总数据参数,格式为1,2,3</description>
+			<name>countVar</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>当前第几页</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否分页</description>
+			<name>page</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>结果引用名称</description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Service类全名</description>
+			<name>service</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Service方法名称</description>
+			<name>method</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>single模式</description>
+			<name>single</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>System:系统数据迭代标签</description>
+		<name>SystemList</name>
+		<tag-class>
+			cn.com.mjsoft.cms.content.html.SystemIteratorTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+
+		<attribute>
+			<description>获取内容查询</description>
+			<name>querySign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>总数据量查询</description>
+			<name>countSign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>参数,格式为1,2,3,{page},{size}(后为分页参数)</description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>总数据参数,格式为1,2,3</description>
+			<name>countVar</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>当前第几页</description>
+			<name>pn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>分页大小</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>结果引用名称</description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<attribute>
+			<description>Service类全名</description>
+			<name>service</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>single模式</description>
+			<name>single</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+	<tag>
+		<description>SystemAndClient:分页共用标签</description>
+		<name>PageInfo</name>
+		<tag-class>
+			cn.com.mjsoft.cms.common.html.CommonPageTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<variable>
+			<name-given>Page</name-given>
+			<variable-class>
+				cn.com.mjsoft.cms.common.page.Page
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<description>SystemAndClient:分页多页码辅助标签</description>
+		<name>PageNum</name>
+		<tag-class>
+			cn.com.mjsoft.cms.common.html.CommonPageNumTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>最大页码数量</description>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>递进位置</description>
+			<name>movePos</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<variable>
+			<name-given>Num</name-given>
+			<variable-class>java.lang.Integer</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+
+
+	<tag>
+		<description>System:站点预览</description>
+		<name>SystemPreview</name>
+		<tag-class>
+			cn.com.mjsoft.cms.common.html.SystemPreviewTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>模式</description>
+			<name>mode</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>id</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>SystemAndCLient:获取站点资源信息</description>
+		<name>ResInfo</name>
+		<tag-class>
+			cn.com.mjsoft.cms.resources.html.SiteFileResFullInfoTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>资源信息</description>
+			<name>res</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>类型</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>结果引用名称</description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>值Key</description>
+			<name>key</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+
+
+	<!-- 共用标签 结束 -->
+
+
+
+
+	<!-- 系统标签开始 -->
+	<tag>
+		<description>If</description>
+		<name>if</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.IfTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<name>test</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>Else</description>
+		<name>else</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.ElseTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+	</tag>
+
+	<tag>
+		<description>ElseIf</description>
+		<name>elseif</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.ElseIfTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<name>test</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>当上一个列表取值标签为空时,将执行此标签中的页面</description>
+		<name>Empty</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.EmptyDataTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>上一个取值标签的值名称</description>
+			<name>flag</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>当上一个列表取值标签不为空时,将执行此标签中的页面</description>
+		<name>EmptyNot</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.EmptyNotDataTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>上一个取值标签的值名称</description>
+			<name>flag</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+
+	<tag>
+		<description>Client:访问统计通用代码</description>
+		<name>VisStat</name>
+		<tag-class>
+			cn.com.mjsoft.cms.stat.html.ClientVisStatEntryUrlShowTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>可能的内容ID</description>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>可能的栏目ID</description>
+			<name>classId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+
+
+	<tag>
+		<description>格式化系统时间</description>
+		<name>FormatDate</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.FormatDateTimeTag
+		</tag-class>
+		<body-content>jsp</body-content>
+		
+		<attribute>
+			<description>原始格式格式</description>
+			<name>oldFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>格式</description>
+			<name>format</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>时间字符</description>
+			<name>date</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>检查时间字符</description>
+			<name>checkDate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>替换时间字符</description>
+			<name>replace</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>是否为bean模式,通过$(Date)获取参数</description>
+			<name>beanMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<description>格式化数字值</description>
+		<name>FormatNum</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.FormatNumTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>输入值</description>
+			<name>val</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>Num类型：long,int,double,bool 默认long</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		
+	</tag>
+	
+ 
+
+	<tag>
+		<description>转换URL参数的中文</description>
+		<name>UrlParam</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.UrlParamToChinaeseStringTag
+		</tag-class>
+
+		<attribute>
+			<description>target param</description>
+			<name>target</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>目标编码</description>
+			<name>enc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>转换Encode后的参数</description>
+		<name>DecodeParam</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.ParamDecodeTag
+		</tag-class>
+
+		<attribute>
+			<description>目标字符</description>
+			<name>str</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>目标编码,默认UTF-8</description>
+			<name>enc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否过滤html标签字符,默认为过滤</description>
+			<name>codeMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>对文字进行编码</description>
+		<name>EncodeParam</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.ParamEncodeTag
+		</tag-class>
+
+		<attribute>
+			<description>目标字符</description>
+			<name>str</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>目标编码</description>
+			<name>enc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+
+	<tag>
+		<description>获取IP地域信息</description>
+		<name>IPArea</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.IPAreaInfoTag
+		</tag-class>
+
+		<attribute>
+			<description>目标IP</description>
+			<name>ip</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+
+
+
+
+	<tag>
+		<description>对js的'号进行安全处理</description>
+		<name>JsEncode</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.JSParamEncodeTag
+		</tag-class>
+
+		<attribute>
+			<description>目标字符</description>
+			<name>str</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+
+
+	<tag>
+		<description>System:获取session</description>
+		<name>SID</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.SessionIdTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+	</tag>
+
+	<tag>
+		<description>截取指定长度的字符串</description>
+		<name>SubString</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.SubStringTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>目标字符串</description>
+			<name>str</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>长度</description>
+			<name>len</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>尾部结束字符</description>
+			<name>tail</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<description>替换指定长度的字符串</description>
+		<name>ReplaceString</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.ReplaceStrTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>目标字符串</description>
+			<name>str</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>替换起始</description>
+			<name>start</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>替换结束</description>
+			<name>end</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>替换字符</description>
+			<name>replace</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<description>服务器时间</description>
+		<name>CurrentDT</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.CurrentDateTimeTag
+		</tag-class>
+		<body-content>jsp</body-content>
+
+	</tag>
+
+	<tag>
+		<description>SystemAndClient:参数辅助加密解密</description>
+		<name>ParamCode</name>
+		<tag-class>
+			cn.com.mjsoft.cms.common.html.ParamUtilTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description></description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description></description>
+			<name>target</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description></description>
+			<name>mode</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description></description>
+			<name>use</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<description>SystemAndClient:唯一token获取</description>
+		<name>Token</name>
+		<tag-class>
+			cn.com.mjsoft.framework.web.html.common.TokenStrTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description></description>
+			<name>mode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	
+	</tag>
+	
+	
+	<tag>
+		<description>SystemAndClient:获取指定页面对象Map或Bean的属性值</description>
+		<name>Get</name>
+		<tag-class>
+			cn.com.mjsoft.cms.common.html.MapOrBeanGetFieldValTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>页面对象名称</description>
+			<name>objName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>对象属性名称</description>
+			<name>fieldName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>是否页面对象模式</description>
+			<name>objMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>key-val元数据</description>
+			<name>choice</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	
+	</tag>
+	
+	
+	<tag>
+		<description>SystemAndClient:跌代Key-Val模式值,格式为a=1,b=2,c=3</description>
+		<name>KeyAndVal</name>
+		<tag-class>
+			cn.com.mjsoft.cms.common.html.KeyAndValIterTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>key-val元数据</description>
+			<name>choice</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<variable>
+			<name-given>KV</name-given>
+			<variable-class>
+				java.lang.Object
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+		
+		<variable>
+			<name-given>status</name-given>
+			<variable-class>
+				cn.com.mjsoft.framework.web.html.common.IteratorStatus
+			</variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+
+	
+	</tag>
+	
+	
+	
+	<tag>
+		<description>SystemAndClient:设定一个页面级变量</description>
+		<name>Set</name>
+		<tag-class>
+			cn.com.mjsoft.cms.common.html.SetPageScopeValTag
+		</tag-class>
+
+		<body-content>jsp</body-content>
+
+		<attribute>
+			<description>变量id</description>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		
+		<attribute>
+			<description>变量值</description>
+			<name>val</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		 
+
+	
+	</tag>
+	
+	
+
+	<!-- 系统标签结束 -->
+
+
+
+
+
+
+</taglib>

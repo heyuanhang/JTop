@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+/* 自适应选项卡 */ 
+ul,li{margin:0; padding:0;}
+body{ padding:5px;}
+
+.topleft{background:url(left_r1_c1.gif) no-repeat;}
+.lefttit{background:url(left_r1_c3.gif) repeat-x; cursor:pointer; font-size:14px; line-height:28px; color:#225e99;}
+.topright{background:url(left_r1_c5.gif) no-repeat;}
+.lefttit img{ vertical-align:middle;}
+
+.leftline{ background:url(ccc_1x1.gif) repeat-y left top;}
+.rightline{ background:url(ccc_1x1.gif) repeat-y right top;}
+.leftbt{ background:url(leftbt_r1_c1.gif) no-repeat; width:8px; height:5px;}
+.btbg{background:url(ccc_1x1.gif) repeat-x bottom ;}
+.rightbt{ background:url(leftbt_r1_c3.gif) no-repeat; width:8px; height:5px;}
+
+.listul{ margin-top:4px;}
+.listul li{ height:40px; line-height:40px; }
+.listul li a{ height:43px; display:block; font-size:13px; _padding-top:5px; _height:22px;}
+.listul li a:hover{background:url(menu_bg.gif) bottom left no-repeat; color:#006;}
+.listul li img { vertical-align:middle;margin-right:3px;}
+
+
+
+/*shu*/
+.menutree{background:url(left_bg.gif) top left repeat-x;}
+.left_tab{ border-bottom:solid 1px #CCC;}
+.left_tab a{ display:block; width:27px; height:27px; cursor:pointer;}
+.left_tab .a1{ display:block; text-align:center;}
+.left_tab .a2{ background-image:url(tabbg.jpg); background-position:top; background-repeat:no-repeat;text-align:center;}
+.left_tab a img{ margin-top:5px;}
+
+.left_tab .a3{background:#fff; border:solid 1px #abb8c3;text-align:center; background-repeat:no-repeat;display:block; text-align:center;}
+
+
+
+
+
+
+
+
+
+
+

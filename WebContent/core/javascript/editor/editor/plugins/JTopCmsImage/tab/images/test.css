@@ -1,0 +1,78 @@
+/* 自适应选项卡 */
+ul,li {
+	margin: 0;
+	padding: 0;
+}
+
+div.auntion_tagRoom {
+	width: 663px;
+	height: 26px;
+	overflow: hidden;
+	border-bottom: 1px solid #d7d7d7;
+}
+
+div.auntion_tagRoom ul,div.auntion_tagRoom ul li {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: auto;
+}  /* 首先清除所有样式 */
+div.auntion_tagRoom ul {
+	margin: 0 0 0 10px;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+	clear: both;
+}
+
+div.auntion_tagRoom ul li {
+	margin: 0 4px 0 0;
+	padding: 0 0 0 5px;
+	border: 0;
+	list-style-type: none;
+	float: left;
+	background: url(../images/left.gif) no-repeat left top;;
+	height: 26px;
+	font-size: 12px;
+}
+
+div.auntion_tagRoom ul li a {
+	margin: 0 0 0 0;
+	padding: 0px 6px 0 2px;
+	border: 0;
+	list-style-type: none;
+	float: left;;
+	text-decoration: none;
+	background: url(../images/right.gif) no-repeat right top;
+	width: auto;
+	height: 26px;
+	line-height: 26px;
+	color: #767779;
+}
+
+div.auntion_tagRoom ul li.selectTag {
+	width: auto;
+	height: 26px;;
+	background-position: left bottom;
+	position: relative;
+	margin-bottom: -2px;
+}
+
+div.auntion_tagRoom ul li.selectTag a {
+	background-position: right bottom;
+	color: #FF0099;
+}  /* 选项卡内容容器 */
+div.auntion_tagRoom_Content {
+	width: 364px;
+	height: 50px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+div.auntion_tagRoom_Content1 {
+	width: 364px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}

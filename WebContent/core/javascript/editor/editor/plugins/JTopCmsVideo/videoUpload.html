@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+      <title>插入视频</title>
+      <script type="text/javascript" src="../../../../core/javascript/commonUtil.js"></script>
+      <link rel="stylesheet" type="text/css" href="../../../../style/default/main.css" />
+   </head>
+   <style type="text/css">
+<!--
+body {
+	margin: 0px;
+	padding:0px;
+
+}
+
+.uploadImg
+{
+	cursor:pointer
+
+}
+-->
+</style>
+   <body>
+      <iframe onload="javascrtpt:changeCurrentVideo();" id="uploadFrame" name="uploadFrame" frameborder=0 src="../../../../core/content/UploadVideo.jsp" width="100%" height="145" scrolling=no></iframe>
+
+      <table width="544" height="232">
+         <tr>
+            <td class="title_td" width="12%">
+               视频宽度:
+            </td>
+            <td width="88%">
+               <input id="width" name="width" size="15" maxlength="20" type="text" class="f_input" value="400" />
+            </td>
+         </tr>
+
+         <tr>
+            <td class="title_td" width="12%">
+               视频高度:
+            </td>
+            <td width="88%">
+               <input id="height" name="height" size="15" maxlength="20" type="text" class="f_input" value="220" />
+            </td>
+         </tr>
+
+         <tr>
+            <td class="title_td" width="12%">
+               自动播放:
+            </td>
+            <td width="88%">
+               <input id="autoStart" name="autoStart" type="radio" value="true" checked />
+               <span class="STYLE12">自动</span> &nbsp;
+               <input id="autoStart" name="autoStart" type="radio" value="false" />
+               <span class="STYLE12">点击播放</span> &nbsp;
+            </td>
+         </tr>
+
+         <tr>
+            <td class="title_td" width="12%">
+               是否重复播放:
+            </td>
+            <td width="88%">
+               <input id="repeatFlag" name="repeatFlag" type="radio" value="none" checked />
+               <span class="STYLE12">否</span> &nbsp;
+               <input id="repeatFlag" name="repeatFlag" type="radio" value="always" />
+               <span class="STYLE12">是</span> &nbsp;
+            </td>
+         </tr>
+
+
+         <tr>
+            <td class="title_td" width="12%">
+               播放质量:
+            </td>
+            <td width="88%">
+               <input id="quality" name="quality" type="radio" value="high" checked />
+               <span class="STYLE12">高</span> &nbsp;
+               <input id="quality" name="quality" type="radio" value="mid" />
+               <span class="STYLE12">一般</span> &nbsp;
+            </td>
+         </tr>
+
+         <tr>
+            <td class="title_td" width="12%">
+               是否支持全屏:
+            </td>
+            <td width="88%">
+               <input id="allowFullScreen" name="allowFullScreen" type="radio" value="true" checked />
+               <span class="STYLE12">支持</span> &nbsp;
+               <input id="allowFullScreen" name="allowFullScreen" type="radio" value="false" />
+               <span class="STYLE12">不支持</span> &nbsp;
+            </td>
+         </tr>
+        
+      </table>
+      <input name="videoFile" type="hidden" id='videoFile' value='' />
+       <center>
+            <button type="button" id="save" onclick="javascript:window.close();">
+               <img src="../../../../style/default/images/add-act.png" alt="" />
+               确认
+            </button>
+            &nbsp;&nbsp;&nbsp;
+           
+         </center>
+      
+   </body>
+
+</html>
+<script type="text/javascript">
+
+function changeCurrentVideo()
+{
+
+	document.all.videoFile.value=getResultFromFrame("uploadFrame","videoFile");
+	
+ 
+	if(document.all.videoFile.value!='')
+	{
+        
+        var paramMap = new Array();
+        paramMap["fileName"]=document.all.videoFile.value; 
+        paramMap["width"]=document.getElementById("width").value
+        paramMap["height"]=document.getElementById("width").value;
+        paramMap["autoStart"]=document.getElementById("autoStart").value;
+        paramMap["repeatFlag"]=document.getElementById("repeatFlag").value;
+        paramMap["quality"]=document.getElementById("quality").value;
+        paramMap["allowFullScreen"]=document.getElementById("allowFullScreen").value;
+        
+      // alert(document.getElementById("allowFullScreen").value);
+    	window.returnValue=paramMap;
+    }
+}
+
+	
+function getResultFromFrame(frameName,targetName)
+{
+    return document.getElementById(frameName).contentWindow.document.getElementById(targetName).value;
+}
+	
+</script>

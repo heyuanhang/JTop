@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	margin:0;
+	padding:0;
+	color:#454545;
+}
+body, button, input, select, textarea {
+	font:13px/1.5 Microsoft YaHei,tahoma, helvetica, arial, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+}
+address, cite, dfn, em, var {
+	font-style:normal;
+}
+code, kbd, pre, samp {
+	font-family:courier new, courier, monospace;
+}
+small {
+	font-size:12px;
+}
+ul, ol ,li{
+	list-style:none;
+}
+a {
+	text-decoration:none;
+	color:#666;
+}
+a:hover {
+	text-decoration:none; color:#999;
+}
+
+img {
+	border:0; vertical-align:top;
+}
+button, input, select, textarea {
+	font-size:100%;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.Black1,.blank1px{display:block; clear:both; height:1px; font-size:1px; overflow:hidden;} 
+.Black5,.blank5px{display:block; clear:both; height:5px; font-size:1px; overflow:hidden;} 
+.Black8,.blank8px{display:block; clear:both; height:8px; font-size:1px; overflow:hidden;} 
+.Black10,.blank10px{display:block; clear:both; height:10px; font-size:1px; overflow:hidden;} 
+.blank12px{display:block; clear:both; height:12px; font-size:1px; overflow:hidden;} 
+.fl{ float:left;}
+.fr{ float:right;}
+
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix {
+	display:inline-block;
+}/* Hides from IE-mac \*/
+* html .clearfix {
+	height:1%;
+}
+.clearfix {
+	display:block;
+}/* End hide from IE-mac */
+
+.red{ color:#F00;}
+
+
+
+/*新增加代码*/
+
+
+/*头部邮件图标状态*/
+
+.header-ico{
+	position:absolute; top:0px; right:10px;
+	padding:4px 0; overflow:hidden;
+}
+.header-ico a{
+	margin-left:10px;
+}
+.header-ico li{
+	position: relative;
+	padding: 7px 9px 6px;
+	z-index: 200;
+	float:right;
+	display:block;
+	overflow:hidden;
+}
+.header-ico li a{
+	color:#fff;
+}
+.header-ico li a:hover{
+	color:#ddd;
+}
+.header-ico img{
+	margin-top:1px;
+}
+.header-ico .mailnum{
+	position: absolute;
+	left:0px;
+	top:8px;
+	width:16px;
+	height:13px;
+	line-height:13px;
+	background:url(../images/tips_bg.png) no-repeat;
+	text-align:center;
+	color:#fff;
+}
+
+.header-ico .ico-mail{
+	background:url(../../icons/mail.png) no-repeat 0px 0px; +background:url(../../icons/mail.png) no-repeat 0px -2px; padding-left:18px;
+}
+.header-ico .ico-network{
+	background:url(../../icons/monitor-network.png) no-repeat 0px 0px; padding-left:18px;
+}
+.header-ico .ico-user{
+	background:url(../../icons/user.png) no-repeat 0px 0px; padding-left:18px;
+}
+.header-ico .ico-key-solid{
+	background:url(../../icons/key-solid.png) no-repeat 0px 0px; padding-left:18px;
+}
+.header-ico .ico-out{
+	background:url(../../icons/user-silhouette-question.png) no-repeat 0px 0px; padding-left:18px;
+}
+
+
+.header-ico .ico-wb{
+	background:url(../../icons/application-task.png) no-repeat 0px 0px; padding-left:18px;
+}
+
+

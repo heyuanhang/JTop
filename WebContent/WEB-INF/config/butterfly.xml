@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<butterfly-config>
+	<system-set>
+		<debug>false</debug>
+		
+		<resource path="/config/conf">auctionText</resource>
+		
+		<rt-init-behavior>
+			<target-class>cn.com.mjsoft.cms.behavior.JtRuntime</target-class>		
+		</rt-init-behavior>
+
+		<init-behavior>
+			<target-class>cn.com.mjsoft.cms.behavior.InitSiteGroupInfoBehavior</target-class>
+
+			<target-class>cn.com.mjsoft.cms.behavior.ResumeScheduleJobBehavior</target-class>
+
+			<target-class>cn.com.mjsoft.cms.behavior.QueryDataInfoBehavior</target-class>
+
+			<target-class>cn.com.mjsoft.cms.behavior.InitClientIpAccessBehavior</target-class>
+			
+			<target-class>cn.com.mjsoft.cms.behavior.InitRSABehavior</target-class>
+			
+		 	
+		</init-behavior>
+
+		<access-behavior>
+			<target-class>cn.com.mjsoft.cms.stat.behavior.DangerAcceccTraceBehavior</target-class>
+		</access-behavior>
+		
+		<token-sec-behavior>
+			<target-class>cn.com.mjsoft.cms.member.behavior.SecTokenModeCheckBehavior</target-class>
+		</token-sec-behavior>
+
+	</system-set>
+
+	<global-results>
+		<result name="login">/core/login.jsp</result>
+		<result name="exception">/core/common/error.jsp</result>
+		<result name="tokenError" type="flow-chain" module="appbiz">appTokenError</result>		
+	</global-results>
+
+	<global-exception-handlers>
+		<exception-handler exception="cn.ming.sys.framework.exception.FrameworkException" result-link="exception" />
+		<exception-handler exception="com.ming.butterfly.service.AuctionException" result-link="exception" />
+		<exception-handler exception="cn.com.mjsoft.framework.jdbc.exception.DataAccessException" result-link="exception" />
+	</global-exception-handlers>
+
+	<interceptors><!--
+	
+	
+		<interceptor name="flowTrace" type="end">cn.com.mjsoft.cms.common.interceptor.MVCFlowExeTraceInterceptor</interceptor>
+		
+		<interceptor name="deleteTempWhenUploadFlowInvalid" type="end">cn.com.mjsoft.cms.content.interceptor.DeleteTempWhenUploadErrorInterceptor</interceptor>
+
+		<interceptor name="memberSendMsg" type="after">cn.com.mjsoft.cms.member.interceptor.MemberMessageInterceptor</interceptor>
+
+		<interceptor name="memberScoreAct" type="after">cn.com.mjsoft.cms.member.interceptor.MemberScoreInterceptor</interceptor>
+		
+ 		
+	--></interceptors>
+
+	<global-interceptor>
+		<!--<interceptor-ref link="flowTrace" />
+    --></global-interceptor>
+
+	<flow-mapping>
+		<module name="common">
+		 
+			<flow command="queryOperationRTStatus" dispose="cn.com.mjsoft.cms.common.flow.OperationDisposeObserverFlow"></flow>
+
+			<flow command="randCodeStatus" dispose="cn.com.mjsoft.cms.common.flow.ClientAJAXCheckRandomCodeStatusFlow"></flow>
+
+			<flow command="authImg" dispose="cn.com.mjsoft.cms.common.flow.RandomImageFlow"></flow>
+
+			<flow command="editRTcfg" dispose="cn.com.mjsoft.cms.common.flow.EditCmsRuntimeConfigFlow"></flow>
+
+			<flow command="sysFlagExist" dispose="cn.com.mjsoft.cms.common.flow.CheckFlagExistStatusFlow"></flow>
+			
+			<flow command="visStat" dispose="cn.com.mjsoft.cms.stat.flow.ClientQuerySiteVisStatFlow"></flow>
+			 
+			<!--<flow command="token" dispose="cn.com.mjsoft.cms.common.flow.ClientGetTokenFlow"></flow-->
+			
+		</module>
+
+		<module name="setup">
+			<flow command="installDb" dispose="cn.com.mjsoft.cms.install.BuildAndCheckSystemDBRuntimeFlow">
+			 
+			</flow>
+
+			<flow command="checkDb" dispose="cn.com.mjsoft.cms.install.BuildAndCheckSystemDBRuntimeFlow">
+
+			</flow>
+			
+			<flow command="confirmOrders" dispose="cn.com.mjsoft.cms.install.BuildAndCheckSystemDBRuntimeFlow">
+
+			</flow>
+			
+			
+		</module>
+
+		 
+		
+		<!-- 系统 API -->
+		<module name="japi">
+		
+			<flow command="getContentList" name="获取内容列表" dispose="cn.com.mjsoft.cms.content.json.ClientGetContentListJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getMutiContentList" name="获取自定义查询内容" dispose="cn.com.mjsoft.cms.content.json.ClientContentMutiQueryJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getTagContent" name="获取Tag词关联内容" dispose="cn.com.mjsoft.cms.content.json.ClientGetTagContentJsonFlow" >
+				
+			</flow>
+					 	
+			<flow command="getContent" name="获取单一内容" dispose="cn.com.mjsoft.cms.content.json.ClientContentJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getPageArticle" name="获取文章内容分页" dispose="cn.com.mjsoft.cms.content.json.ClientContentPageListJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getContentStatus" name="获取内容访问状态" dispose="cn.com.mjsoft.cms.content.json.ClientContentClickAndCommStatusJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getRelateContent" name="获取关联内容" dispose="cn.com.mjsoft.cms.content.json.ClientRelateContentJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getNPContent" name="获取上一下一条内容" dispose="cn.com.mjsoft.cms.content.json.ClientNextOrPrevJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getPhotoGroup" name="获取图片集" dispose="cn.com.mjsoft.cms.content.json.ClientPhotoGroupJsonFlow" >
+				
+			</flow>
+		 			
+			<flow command="getCommend" name="获取推荐位行内容" dispose="cn.com.mjsoft.cms.content.json.ClientCommendInfoJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getClass" name="获取栏目" dispose="cn.com.mjsoft.cms.channel.json.ClientClassJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getCommendType" name="获取推荐位类型" dispose="cn.com.mjsoft.cms.channel.json.ClientCommendTypeJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getTagWord" name="获取Tag词" dispose="cn.com.mjsoft.cms.channel.json.ClientTagWordJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getChannelPath" name="获取栏目路径" dispose="cn.com.mjsoft.cms.channel.json.ClientChannelPathJSonFlow" >
+				
+			</flow>
+			
+			<flow command="checkWhiteIP" name="获取栏目IP白名单" dispose="cn.com.mjsoft.cms.channel.json.ClientChannelWhiteIPJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getSite" name="获取站点" dispose="cn.com.mjsoft.cms.site.json.ClientSiteJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getResInfo" name="解析上传资源" dispose="cn.com.mjsoft.cms.resources.json.ClientGetResFullInfoJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getModel" name="获取模型数据" dispose="cn.com.mjsoft.cms.metadata.json.ClientModelJsonFlow" >
+				
+			</flow>
+			
+			<flow command="search" name="搜索站点内容" dispose="cn.com.mjsoft.cms.search.json.ClientSearchContentJsonFlow" >
+				
+			</flow>
+			
+			
+			<flow command="searchKey" name="获取用户搜索词" dispose="cn.com.mjsoft.cms.search.json.ClientSearchKeyJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getComment" name="获取推荐位行内容" dispose="cn.com.mjsoft.cms.comment.json.ClientContentCommentJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getReply" name="获取评论回复" dispose="cn.com.mjsoft.cms.comment.json.ClientContentCommentReplyJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getGbConfig" name="获取留言板配置" dispose="cn.com.mjsoft.cms.guestbook.json.ClientGuestbookConfigJSonFlow" >
+				
+			</flow>
+			
+			
+			<flow command="getGbInfo" name="获取留言信息" dispose="cn.com.mjsoft.cms.guestbook.json.ClientGuestbookInfoJSonFlow" >
+				
+			</flow>
+			
+
+			<flow command="getSurveyGroup" name="获取调查问卷组" dispose="cn.com.mjsoft.cms.questionnaire.json.ClientSurveyGroupJSonFlow" >
+				
+			</flow>
+			
+			
+			<flow command="getSurvey" name="获取调查问卷组" dispose="cn.com.mjsoft.cms.questionnaire.json.ClientSurveyJSonFlow" >
+				
+			</flow>
+			
+			
+			<flow command="getSurveyOpt" name="获取调查单项信息" dispose="cn.com.mjsoft.cms.questionnaire.json.ClientSurveyOptionJSonFlow" >
+				
+			</flow>
+			
+			<flow command="getSurveyText" name="获取调查文本单项信息" dispose="cn.com.mjsoft.cms.questionnaire.json.ClientSurveyOptTextJSonFlow" >
+				
+			</flow>
+			
+			
+			<flow command="getSiteAnn" name="获取站点公告" dispose="cn.com.mjsoft.cms.interflow.json.ClientSiteAnnounceJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getFLink" name="获取友情链接" dispose="cn.com.mjsoft.cms.interflow.json.ClientSiteFriendLinkJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getMember" name="获取登录会员信息" dispose="cn.com.mjsoft.cms.member.json.ClientQueryMemberInfoJsonFlow" >
+				
+			</flow>
+			
+			
+			<flow command="getMemberRole"  name="获取会员角色信息" dispose="cn.com.mjsoft.cms.member.json.ClientMemberRoleJsonFlow" >
+				
+			</flow>
+			
+			<flow command="getMemberAcc" name="当前会员白名单" dispose="cn.com.mjsoft.cms.member.json.ClientMemberACCJsonFlow" >
+				
+			</flow>
+			
+			
+			 
+		</module>
+		
+		<!-- APP CMS支持业务 -->
+		<module name="appbiz">
+			<flow command="appClientGetCMSTime" dispose="cn.com.mjsoft.cms.appbiz.flow.AppbizCoreFlow" >
+				 
+			</flow>
+			
+			<flow command="appClientGetPK" dispose="cn.com.mjsoft.cms.appbiz.flow.AppbizCoreFlow" >
+				 
+			</flow>
+			
+			<flow command="appClientReg" dispose="cn.com.mjsoft.cms.appbiz.flow.AppbizCoreFlow" >
+				 
+			</flow>
+			
+			<flow command="appGetToken" dispose="cn.com.mjsoft.cms.appbiz.flow.AppbizCoreFlow" >
+				 
+			</flow>
+			
+			<flow command="appTokenError" dispose="cn.com.mjsoft.cms.appbiz.flow.AppbizCoreFlow" >
+				 
+			</flow>
+			
+			<flow command="getApiInfo" dispose="cn.com.mjsoft.cms.appbiz.flow.AppbizCoreFlow" >
+				 
+			</flow>
+			
+			 
+			
+			
+			<flow command="appMemberLogin" dispose="cn.com.mjsoft.cms.member.json.MemberAppLoginFlow" >
+				 
+			</flow>
+			
+			<flow command="appMemberLoginOut" dispose="cn.com.mjsoft.cms.appbiz.flow.MemberAppLoginFlow" >
+			 
+			</flow>
+			
+			<flow command="searchAndInitApi" token="true" dispose="cn.com.mjsoft.cms.appbiz.flow.SysApiCfgFlow" >
+			 
+			</flow>
+			
+			<flow command="addApiCfg" token="true" dispose="cn.com.mjsoft.cms.appbiz.flow.SysApiCfgFlow" >
+			 
+			</flow>
+			
+			<flow command="editApiCfg" token="true" dispose="cn.com.mjsoft.cms.appbiz.flow.SysApiCfgFlow" >
+			 	
+			</flow>
+			
+			<flow command="editApiCfgParam" token="true" dispose="cn.com.mjsoft.cms.appbiz.flow.SysApiCfgFlow" >
+			 
+			</flow>
+			
+			<flow command="deleteApiCfg" token="true" dispose="cn.com.mjsoft.cms.appbiz.flow.SysApiCfgFlow" >
+			 
+			</flow>
+			
+			
+			 
+		
+		</module>
+
+		 
+	
+
+	</flow-mapping>
+
+
+</butterfly-config>

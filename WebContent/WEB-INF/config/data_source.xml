@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<factory>
+
+	 
+
+	<!--<datasource name="OA101SqlServer" type="sqlserver">
+
+		<ip>192.168.0.101</ip>
+		<port>1433</port>
+		<dbName>jtopcmsv1</dbName>
+		<user>sa</user>
+		<pw>sasa</pw>
+		<conn_count>60</conn_count>
+
+	</datasource>
+
+--></factory>
+
+

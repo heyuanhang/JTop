@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+BODY {
+	FONT-SIZE: 13px; BACKGROUND: url(../images/topbgblue.jpg) #1173be left top repeat-x; MARGIN: 0px; WIDTH: 100%; COLOR: #222; WORD-BREAK: break-all; LINE-HEIGHT: 150%; FONT-FAMILY: Microsoft YaHei,Arial,tahoma,Helvetica,sans-serif; HEIGHT: 100%; TEXT-ALIGN: center
+}
+.topright A{
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.topright A:hover {
+	COLOR: #CCC;
+	TEXT-DECORATION: none
+}
+.topright,.topright p{ color:#fff;}
+
+/*nav*/
+
+.logo{ background:url(../images/logo.jpg) no-repeat; width:200px; height:73px;_position:static;
+}
+.height53{ padding-top:53px; width:200px; display:block; color:#CCC;}
+.logo p{Font-style:italic;}
+
+.topinfor{
+	height:47px;
+	color:#F1FCC7;
+	padding-left:15px;
+}
+.topinfor span,.topinfor  a{
+	color: #E2F97B;
+}
+
+.nav ul{ zoom:1;}
+.nav ul li{ float:left;width:90px; height:28px; margin-left:10px; line-height:28px; text-align:center; font-size:13px;}
+.nav ul li a{ display:block; width:90px; height:28px; background:url(../images/navbg.png) no-repeat; color:#fff; cursor:pointer;}
+.nav ul li a:hover{background:url(../images/navcur.png) no-repeat; color:#6a8fff; width:auto;}
+.nav ul li a.curr{background:url(../images/navcur.png) no-repeat; color:#6a8fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
