@@ -54,7 +54,7 @@
        		<cms:Include page="block/index_left_top.jsp"/>
     <%--  <cms:Block flag="mh_sy_hd"></cms:Block> --%>
               <!--幻灯结束-->
-           </div>
+           </div>  
          
            <!--视频新闻开始-->
            <div class="layout-video">
